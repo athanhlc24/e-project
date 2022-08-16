@@ -32,17 +32,18 @@
                     </div>
                 </a>
                 <h4> <%= carList[i].BrName%> <%= carList[i].Name%></h4>
-                <p><i class="fa-solid fa-dollar-sign"></i> <%= carList[i].Price%> </p>
-                <p><i class="fa-solid fa-car"></i>  <%=carList[i].BodyStyle%></p>
-                <p><i class="fa-solid fa-gas-pump"></i>  <%=carList[i].Fueltype%></p>
+                <div class="row">
+                    <div class="col-md-4"><i class="fa-solid fa-dollar-sign"></i> <%= carList[i].Price%> </div>
+                    <div class="col-md-4"><i class="fa-solid fa-car"></i>  <%=carList[i].BodyStyle%></div>
+                    <div class="col-md-4"><i class="fa-solid fa-gas-pump"></i>  <%=carList[i].Fueltype%></div>
+                </div>
             </div>
         <%}%>
         <div class="col-md-1.5 sort">
             <form>
-                <select name="thanhpho">
-                    <option value="">Sort</option>
-                    <option value="hn">Low to high</option>
-                    <option value="sg">High to low</option>
+                <select name="">
+                    <option  value="hn">Low to high</option>
+                    <option  value="sg">High to low</option>
                 </select>
             </form>
         </div>
