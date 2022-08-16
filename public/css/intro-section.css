@@ -1,0 +1,25 @@
+.intro{
+    background-color: #dc3545;
+    color: #eeeeee;
+    font-size: 20px;
+}
+.intro-trai{
+    float: left;
+    width: calc(50% - 62px);
+    border:1px;
+    margin: 15px;
+    padding: 15px;
+}
+.intro-phai{
+    float: right;
+    width: calc(50% - 62px);
+    border:1px;
+    margin: 15px;
+    padding: 15px;
+}
+.intro-trai ul li{
+    list-style: none;
+}
+.intro-phai ul{
+    float: right;
+}

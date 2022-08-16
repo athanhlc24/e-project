@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <%- include("css.ejs")%>
+    <link rel="stylesheet" href="/css/car-price-list.css"/>
+
+</head>
+<%- include("header.ejs")%>
+<%- include("nav.ejs")%>
+<body>
+
+<div class="container">
+    <div class="row">
+        <h3 id="list-car-price">LIST CAR PRICE  </h3>
+
+        <div class="title-border">
+            <div class="title-border-inner"></div>
+            <div class="title-border-inner"></div>
+            <div class="title-border-inner"></div>
+            <div class="title-border-inner"></div>
+        </div>
+
+        <% for (var i = 0; i < carPriceList.length;i++){%>
+            <div class="col-md-3.5 car-price-list">
+                <a href="#">
+                    <div class="thumb">
+                        <img src="/demo-list/demo-list.png"/>
+                    </div>
+
+                </a>
+                <h4><%= carPriceList[i].Name%></h4>
+                <p><i class="fa-solid fa-dollar-sign"></i><%= carPriceList[i].Price%> </p>
+            </div>
+        <%}%>
+        <div class="col-md-1.5 sort">
+            <form>
+                <select>
+                    <option value="">Sort</option>
+                    <option value="hn">Low to high</option>
+                    <option value="sg">High to low</option>
+                </select>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<%- include("intro-section.ejs")%>
+<%- include("footer.ejs")%>
+
+</html>

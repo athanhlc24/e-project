@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <%- include("css.ejs")%>
+    <link rel="stylesheet" href="/css/list-product.css"/>
+
+</head>
+<%- include("header.ejs")%>
+<%- include("nav.ejs")%>
+<body>
+
+<div class="container">
+    <div class="row">
+        <h3 id="list">LIST CAR MERCEDES  </h3>
+
+        <div class="title-border">
+            <div class="title-border-inner"></div>
+            <div class="title-border-inner"></div>
+            <div class="title-border-inner"></div>
+            <div class="title-border-inner"></div>
+        </div>
+        <% for (var i = 0; i < carList.length;i++){%>
+            <div class="col-md-3.5 list-product">
+                <a href="#">
+                    <div class="thumb">
+                        <img src="/demo-list/demo-list.png"/>
+                    </div>
+                </a>
+                <h4> <%= carList[i].BrName%> <%= carList[i].Name%></h4>
+                <p><i class="fa-solid fa-dollar-sign"></i> <%= carList[i].Price%> </p>
+                <p><i class="fa-solid fa-car"></i>  <%=carList[i].BodyStyle%></p>
+                <p><i class="fa-solid fa-gas-pump"></i>  <%=carList[i].Fueltype%></p>
+            </div>
+        <%}%>
+        <div class="col-md-1.5 sort">
+            <form>
+                <select name="thanhpho">
+                    <option value="">Sort</option>
+                    <option value="hn">Low to high</option>
+                    <option value="sg">High to low</option>
+                </select>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<%- include("intro-section.ejs")%>
+<%- include("footer.ejs")%>
+
+</html>

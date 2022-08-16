@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="/css/footer.css">
+<footer class="full-screen-preview">
+
+
+        <div class="container">
+                <div class="footer-trai">
+                        <div>
+
+                                <ul>
+                                        <p>USEFUL LINKS</p>
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="/aboutus">About US</a></li>
+                                        <li><a href="#">Services</a></li>
+                                        <li><a href="#">Contact US</a></li>
+
+                                </ul>
+                        </div>
+                </div>
+                <div class="footer-phai">
+                        <div>
+                                <ul>
+                                        <p>CONTACT INFOR</p>
+                                        <li><i class="fa-solid fa-location-crosshairs"></i><a href="https://www.google.com/maps/place/8+T%C3%B4n+Th%E1%BA%A5t+Thuy%E1%BA%BFt,+M%E1%BB%B9+%C4%90%C3%ACnh,+C%E1%BA%A7u+Gi%E1%BA%A5y,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam/@21.0285583,105.7810277,17z/data=!4m5!3m4!1s0x313454b32ecb92db:0x3964e6238a3bd088!8m2!3d21.0286284!4d105.7818324!5m2!1e4!1e1?hl=vi-VN"> 8 Ton That Thuyet, Cau Giay, Hanoi</a></li>
+                                        <li><i class="fa-solid fa-phone"></i><a href="#"> Hotline 24/7: 0329.226.456</a></li>
+                                        <li><i class="fa-solid fa-envelope"></i><a href="https://www.google.com/intl/vi/gmail/about/"> info@cariomoto.com</a></li>
+                                        <div class="my-icon">
+                                                <a href="https://www.facebook.com/" style="font-size: 35px "><i class="fa-brands fa-facebook"></i></a>
+                                                <a href="https://www.messenger.com/" style="font-size: 35px"> <i class="fa-brands fa-facebook-messenger"></i></a>
+                                                <a href="https://www.youtube.com/" style="font-size: 35px"><i class="fa-brands fa-youtube"></i></a>
+                                                <a href="https://www.linkedin.com/feed/" style="font-size: 35px"><i class="fa-brands fa-linkedin"></i></a>
+                                        </div>
+                                </ul>
+                        </div>
+
+
+                </div>
+
+        </div>
+        <!-- import icon font awesome -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" />
+        <!-- Import thư viện JQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+                // kéo xuống khoảng cách 500px thì xuất hiện nút Top-up
+                var offset = 500;
+                // thời gian di trượt 0.75s ( 1000 = 1s )
+                var duration = 750;
+                $(function(){
+                        $(window).scroll(function () {
+                                if ($(this).scrollTop() > offset)
+                                        $('#top-up').fadeIn(duration);else
+                                        $('#top-up').fadeOut(duration);
+                        });
+                        $('#top-up').click(function () {
+                                $('body,html').animate({scrollTop: 0}, duration);
+                        });
+                });
+        </script>
+        <div title="Về đầu trang" id="top-up">
+                <i class="fas fa-chevron-circle-up"></i></div>x
+</footer>

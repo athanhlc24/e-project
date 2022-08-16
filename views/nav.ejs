@@ -1,0 +1,44 @@
+<link rel="stylesheet" href="/css/megamenu.css"/>
+<div class="full-screen-preview">
+    <nav>
+        <div class="mega-menu menuClass">
+            <div class="main-links">
+                <ul>
+                    <li><a data-submenu="car-line"  href="#"><b>CAR LINES</b></a></li>
+                    <li><a data-submenu="car-buying-advice"  href="#"><b>CAR BUYING ADVICE</b></a></li>
+                    <li><a data-submenu="service"  href="#"><b>SERVICES</b></a></li>
+                    <li><a data-submenu="car-world"  href="#"><b>CAR WORLD</b></a></li>
+                    <li><a><marquee><b>CARRIO MOTOS VERY PLEASED TO SERVE YOU</b></marquee></a></li>
+                    <li><a><i class="fa-solid fa-phone"></i><b>HOTlINE 24/7: 0329.226.456</b></a></li>
+                </ul>
+
+            </div>
+            <div class="menu-dropdown">
+                <ul class="menu-item-wrapper dropdown" id="car-line">
+                    <li><a href="/product">All Car</a></li>
+                    <%for(var i=0;i<brandList.length;i++){%>
+                    <li><a href="/list-product?BrName=<%= brandList[i].BrName%>"><%= brandList[i].BrName%></a></li>
+                    <%}%>
+                </ul>
+                <ul class="menu-item-wrapper dropdown" id="car-buying-advice">
+                    <li><a href="#">Sign up for a test drive</a></li>
+                    <li><a href="#">Dealer list</a></li>
+                    <li><a href="/car-price-list">Car price list</a></li>
+                </ul>
+                <ul class="menu-item-wrapper dropdown" id="service">
+                    <li><a href="/baohanh">Repair</a></li>
+                    <li><a href="#">Accessary</a></li>
+                </ul>
+                <ul class="menu-item-wrapper dropdown" id="car-world">
+                    <li><a href="/creation">Creation</a></li>
+                    <li><a href="/design">Design and ideas</a></li>
+                    <li><a href="/develop">Develop</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+</div>
+<script type="text/javascript" src="/jQuery/jquery3.6.0.js"></script>
+<script type="text/javascript" src="megamenu.js"> </script>
+<script type="text/javascript">$(".mega-menu").megaMenu();</script>

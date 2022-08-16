@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/best-selling-car-list.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <h3 id="selling"><b>BEST SELLING CAR LIST</b></h3>
+            <div class="title-border">
+                <div class="title-border-inner"></div>
+                <div class="title-border-inner"></div>
+                <div class="title-border-inner"></div>
+                <div class="title-border-inner"></div>
+            </div>
+
+            <%for (var i=0;i<bestList.length;i++){%>
+                <%if(bestList[i].HotCars == 1){%>
+            <div class="list-selling-car col-md-4">
+                <a href="#">
+                    <div class="thumb">
+                        <img src="/demo-list/demo-list.png"/>
+                    </div>
+                </a>
+                <h4> <%=bestList[i].Name%> </h4>
+                <p><i class="fa-solid fa-gas-pump"></i> <%=bestList[i].Fueltype%></p>
+                <p><i class="fa-solid fa-calendar-days"></i> <%=bestList[i].Year%></p>
+                <p><i class="fa-solid fa-dollar-sign"></i> <%=bestList[i].Price%> </p>
+
+            </div>
+                <%}%>
+            <%}%>
+
+        </div>
+    </div>
+</body>
+</html>

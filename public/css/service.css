@@ -1,0 +1,82 @@
+.service{
+    float: left;
+    width: calc(25% - 40px);
+    margin: 10px;
+    padding: 10px;
+    border: none;
+
+}
+.service a{
+    color: gray;
+}
+.service a:hover{
+    color: aqua;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+.warranty-content{
+    text-align: left;
+}
+.baohanh-service{
+    margin: 10px;
+    padding: 10px;
+    border: none;
+    text-align: center;
+}
+.warranty-img{
+    margin-top: 25px;
+    border: none;
+}
+section{
+    background-color: black;
+    color: white;
+}
+.warranty-container{
+    border: none;
+    margin: 25px;
+}
+.warranty-image{
+    padding-bottom: 30px;
+    border: none;
+}
+.warranties{
+    padding: 10px;
+    margin: 15px;
+    margin-bottom: 40px;
+}
+.warranties>hr{
+    width: 40px;
+    height: 1px;
+    float: left;
+    margin-top: -5px;
+}
+.warranties>h2>b{
+    margin-left: -40px;
+
+}
+.warranty-video>iframe{
+    margin-bottom: 40px;
+
+}
+.csw-btn-button {
+    cursor: pointer;
+    font-size: 16px;
+    padding: 10px 35px;
+    color: #ffffff !important;
+    border-radius: 5px;
+    background: #9B6A1D;
+    border: 1px solid #9B6A1D;
+    transition: 0.4s;
+}
+.csw-btn-button:hover {
+    background: #292929;
+}
+.warranty-repair>.warranty-container{
+    margin-top: -5px;
+}
+.warranty-container>ul>li{
+    list-style: circle;
+}

@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="EN">
+<head>
+    <title>Car Detail</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+
+    <!-- External CSS libraries -->
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-submenu.css">
+
+    <link rel="stylesheet" type="text/css" href="/css/bootstrap-select.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/magnific-popup.css">
+    <link rel="stylesheet" href="/css/leaflet.css" type="text/css">
+    <link rel="stylesheet" href="/css/map.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/font/font-awesome/css/font-awesome.min.css">
+    <link type="text/css" rel="stylesheet" href="/font/bootstrap-icons/bootstrap-icons.css">
+    <link rel="stylesheet" type="text/css" href="/font/flaticon/font/flaticon.css">
+    <link rel="stylesheet" type="text/css" href="/font/linearicons/style.css">
+    <link rel="stylesheet" type="text/css"  href="/css/jquery.mCustomScrollbar.css">
+    <link rel="stylesheet" type="text/css"  href="/css/dropzone.css">
+    <link rel="stylesheet" type="text/css"  href="/css/lightbox.min.css">
+    <link rel="stylesheet" type="text/css"  href="/css/jnoty.css">
+    <link rel="stylesheet" type="text/css"  href="/css/slick.css">
+
+    <!-- Custom stylesheet -->
+    <link rel="stylesheet" type="text/css" href="/css/initial.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+    <link rel="stylesheet" type="text/css" id="style_sheet" href="/css/skins/midnight-blue.css">
+
+    <!-- Favicon icon -->
+    <link rel="shortcut icon" href="/img/logos/cm%20logo_black-02" type="image/x-icon" >
+
+    <!-- Google fonts -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=OSans:400,300,600,700,800%7CPlayfair+Display:400,700%7CRoboto:100,300,400,400i,500,700">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,300,700">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link rel="stylesheet" type="text/css" href="/css/ie10-viewport-bug-workaround.css">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script  src="/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script  src="/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script  src="/js/html5shiv.min.js"></script>
+    <script  src="/js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<%- include("header.ejs") %>
+<div class="page_loader"></div>
+
+<!-- Sidenav start -->
+<nav id="sidebar" class="nav-sidebar">
+    <!-- Close btn-->
+    <div id="dismiss">
+        <i class="fa fa-close"></i>
+    </div>
+    <div class="sidebar-inner">
+        <div class="sidebar-logo">
+            <img src="/img/logos/black-logo.png" alt="sidebarlogo">
+        </div>
+        <div class="sidebar-navigation">
+            <h3 class="heading">Pages</h3>
+            <ul class="menu-list">
+                <li><a href="#" class="pt0">Index <em class="fa fa-chevron-down"></em></a>
+                    <ul>
+                        <li><a href="index.html">Index 1</a></li>
+                        <li><a href="index-2.html">Index 2</a></li>
+                        <li><a href="index-3.html">Index 3</a></li>
+                        <li><a href="index-4.html">Index 4</a></li>
+                        <li><a href="index-5.html">Index 5</a></li>
+                        <li><a href="index-6.html">Index 6</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#" class="active">Car Listing <em class="fa fa-chevron-down"></em></a>
+                    <ul>
+                        <li>
+                            <a href="#">List Layout <em class="fa fa-chevron-down"></em></a>
+                            <ul>
+                                <li><a class="dropdown-item" href="car-list-rightside.html">List Right Sidebar</a></li>
+                                <li><a class="dropdown-item" href="car-list-leftsidebar.html">List Left Sidebar</a></li>
+                                <li><a class="dropdown-item" href="car-list-fullWidth.html">List FullWidth</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Grid Layout <em class="fa fa-chevron-down"></em></a>
+                            <ul>
+                                <li><a class="dropdown-item" href="car-grid-rightside.html">Grid Right Sidebar</a></li>
+                                <li><a class="dropdown-item" href="car-grid-leftside.html">Grid Left Sidebar</a></li>
+                                <li><a class="dropdown-item" href="car-grid-fullWidth.html">Grid FullWidth</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Car Details <em class="fa fa-chevron-down"></em></a>
+                            <ul>
+                                <li><a class="dropdown-item" href="car-details.html">Car Details 1</a></li>
+                                <li><a class="dropdown-item" href="car-details-2.html">Car Details 2</a></li>
+                                <li><a class="dropdown-item" href="car-details-3.html">Car Details 3</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Pages <em class="fa fa-chevron-down"></em></a>
+                    <ul>
+                        <li>
+                            <a href="about.html">About Us</a>
+                        </li>
+                        <li>
+                            <a href="services.html">Services</a>
+                        </li>
+                        <li>
+                            <a href="agent.html">Agent</a>
+                        </li>
+                        <li>
+                            <a href="car-comparison.html">Car Compare</a>
+                        </li>
+                        <li>
+                            <a href="car-reviews.html">Car Reviews</a>
+                        </li>
+                        <li>
+                            <a href="gallery.html">Gallery</a>
+                        </li>
+                        <li>
+                            <a href="typography.html">Typography</a>
+                        </li>
+                        <li>
+                            <a href="pricing-tables.html">Pricing Tables</a>
+                        </li>
+                        <li>
+                            <a href="elements.html">Elements</a>
+                        </li>
+                        <li>
+                            <a href="faq.html">Faq</a>
+                        </li>
+                        <li>
+                            <a href="icon.html">Icons</a>
+                        </li>
+                        <li>
+                            <a href="coming-soon.html">Coming Soon</a>
+                        </li>
+                        <li>
+                            <a href="404.html">Error Page</a>
+                        </li>
+                        <li>
+                            <a href="login.html">login</a>
+                        </li>
+                        <li>
+                            <a href="signup.html">Register</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Blog <em class="fa fa-chevron-down"></em></a>
+                    <ul>
+                        <li><a href="blog-columns-2col.html">Blog Columns 2</a></li>
+                        <li><a href="blog-columns-3col.html">Blog Columns 3</a></li>
+                        <li><a href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                        <li><a href="blog-details.html">Blog Details</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Shop <em class="fa fa-chevron-down"></em></a>
+                    <ul>
+                        <li><a href="shop-list.html">Shop List</a></li>
+                        <li><a href="shop-cart.html">Shop Cart</a></li>
+                        <li><a href="shop-checkout.html">Shop Checkout</a></li>
+                        <li><a href="shop-details.html">Shop Details</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="contact.html">Contact</a>
+                </li>
+                <li>
+                    <a href="login.html" class="nav-link h-icon">
+                        <i class="flaticon-logout"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#full-page-search" class="nav-link h-icon">
+                        <i class="fa fa-search"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="get-in-touch">
+            <h3 class="heading">Get in Touch</h3>
+            <div class="get-in-touch-box d-flex">
+                <i class="flaticon-phone"></i>
+                <div class="detail">
+                    <a href="tel:0477-0477-8556-552">0477 8556 552</a>
+                </div>
+            </div>
+            <div class="get-in-touch-box d-flex">
+                <i class="flaticon-mail"></i>
+                <div class="detail">
+                    <a href="#">info@themevessel.com</a>
+                </div>
+            </div>
+            <div class="get-in-touch-box d-flex mb-0">
+                <i class="flaticon-earth"></i>
+                <div class="detail">
+                    <a href="#">info@themevessel.com</a>
+                </div>
+            </div>
+        </div>
+        <div class="get-social">
+            <h3 class="heading">Get Social</h3>
+            <a href="#" class="facebook-bg">
+                <i class="fa fa-facebook"></i>
+            </a>
+            <a href="#" class="twitter-bg">
+                <i class="fa fa-twitter"></i>
+            </a>
+            <a href="#" class="google-bg">
+                <i class="fa fa-google"></i>
+            </a>
+            <a href="#" class="linkedin-bg">
+                <i class="fa fa-linkedin"></i>
+            </a>
+        </div>
+    </div>
+</nav>
+<!-- Sidenav end -->
+
+<!-- Sub banner start -->
+<div class="sub-banner">
+    <div class="container breadcrumb-area">
+        <div class="breadcrumb-areas">
+            <h1>Car Details</h1>
+            <ul class="breadcrumbs">
+                <li><a href="index.html">Home</a></li>
+                <li class="active">Car Details</li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-- Sub Banner end -->
+
+<!-- Car details page start -->
+<div class="car-details-page content-area-6">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-12 col-xs-12">
+                <div class="car-details-section">
+                    <!-- Cardetailsslider 2 start -->
+                    <div class="cardetailsslider-2 mb-40">
+                        <div class="main clearfix">
+                            <div class="slider slider-fors">
+                                <div class="slider-slider-for-photo"><img src="/img/car/C0002/C0002-1.jpg"  class="img-fluid w-100" alt="slider-car"></div>
+                                <div class="slider-slider-for-photo"><img src="/img/car/C0002/C0002-2.jpg"  class="img-fluid w-100" alt="slider-car"></div>
+                                <div class="slider-slider-for-photo"><img src="/img/car/C0002/C0002-3.jpg"  class="img-fluid w-100" alt="slider-car"></div>
+                                <div class="slider-slider-for-photo"><img src="/img/car/C0002/C0002-4.jpg"  class="img-fluid w-100" alt="slider-car"></div>
+                                <div class="slider-slider-for-photo"><img src="/img/car/C0002/C0002-5.jpg"  class="img-fluid w-100" alt="slider-car"></div>
+                            </div>
+                            <div class="slider-navs-box">
+                                <div class="slider slider-navs">
+                                    <div><img src="/img/car/C0002/C0002-1.jpg" width="72" height="44" class="slider-photo" alt="slider-car"></div>
+                                    <div><img src="/img/car/C0002/C0002-2.jpg" width="72" height="44" class="slider-photo" alt="slider-car"></div>
+                                    <div><img src="/img/car/C0002/C0002-3.jpg" width="72" height="44" class="slider-photo" alt="slider-car"></div>
+                                    <div><img src="/img/car/C0002/C0002-4.jpg" width="72" height="44" class="slider-photo" alt="slider-car"></div>
+                                    <div><img src="/img/car/C0002/C0002-5.jpg" width="72" height="44" class="slider-photo" alt="slider-car"></div>
+                                </div>
+                            </div>
+
+                            <div class="heading-car-2">
+                                <div class="pull-left">
+                                    <h3>Mercedes-Maybach S 450 4MATIC</h3>
+                                    <p>
+                                        <i class="flaticon-pin"></i> 8 Ton That Thuyet, Hanoi, Vietnam
+                                    </p>
+                                </div>
+                                <div class="pull-right">
+                                    <div class="price-box-3"><sup>$</sup>350,000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Advanced search start -->
+
+                    <div class="widget-2 advanced-search bg-grea-2 d-lg-none d-xl-none">
+                        <h3 class="sidebar-title">Specifications</h3>
+                        <ul>
+                            <li>
+                                <span>Brand</span>Mercedes
+                            </li>
+                            <li>
+                                <span>Model</span>Mercedes-Maybach S 450 4MATIC
+                            </li>
+                            <li>
+                                <span>Body Style</span>Sedan
+                            </li>
+                            <li>
+                                <span>Year</span>2022
+                            </li>
+                            <li>
+                                <span>Seating Capacity</span>5
+                            </li>
+                            <li>
+                                <span>Engine</span>2999 cc, 6 Cylinders Inline, 4 Valves/Cylinder, DOHC
+                            </li>
+                            <li>
+                                <span>Power</span>630 HP
+                            </li>
+                            <li>
+                                <span>Torque</span>500 Nm
+                            </li>
+                            <li>
+                                <span>Acceleration (0-100km/h)</span>4.8 s
+                            </li>
+                            <li>
+                                <span>Transmission</span>7-speed dual-clutch automatic transmission
+                            </li>
+                            <li>
+                                <span>Drive Train</span>Rear
+                            </li>
+                            <li>
+                                <span>Wheels Size</span>19 inches
+                            </li>
+                            <li>
+                                <span>Fuel Type</span>Gasoline
+                            </li>
+                            <li>
+                                <span>Fuel Efficiency</span>11.2 l/100km
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Tabbing box start -->
+                    <div class="tabbing tabbing-box mb-40">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="true">Description</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="false">Specifications</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" type="button" role="tab" aria-controls="contact" aria-selected="false">Features</button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-tab-5" data-bs-toggle="tab" data-bs-target="#contact-5" type="button" role="tab" aria-controls="contact-5" aria-selected="false">Location</button>
+                            </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="contact-tab-6" data-bs-toggle="tab" data-bs-target="#contact-6" type="button" role="tab" aria-controls="contact-6" aria-selected="false">Video</button>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                <div class="accordion accordion-flush" id="accordionFlushExample">
+                                    <div class="accordion-item">
+                                        <div class="car-description mb-50">
+                                            <h3 class="heading-2">
+                                                Description
+                                            </h3>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas in pulvinar neque. Nulla finibus lobortis pulvinar. Donec a consectetur nulla. Nulla posuere sapien vitae lectus suscipit, et pulvinar nisi tincidunt. Aliquam erat volutpat. Curabitur convallis fringilla diam sed aliquam. Sed tempor iaculis massa faucibus feugiat. In fermentum facilisis massa, a consequat purus viverra a. Aliquam pellentesque nibh et nibh feugiat gravida. Maecenas ultricies, diam vitae semper placerat, velit risus accumsan nisl, eget tempor lacus est vel nunc. Proin accumsan elit sed neque euismod fringilla. Curabitur lobortis nunc velit, et fermentum urna dapibus non. Vivamus magna lorem, elementum id gravida ac, laoreet tristique augue. Maecenas dictum lacus eu nunc porttitor, ut hendrerit arcu efficitur.</p>
+                                            <p>Aliquam ultricies nunc porta metus interdum mollis. Donec porttitor libero augue, vehicula tincidunt lectus placerat a. Sed tincidunt dolor non sem dictum dignissim. Nulla vulputate orci felis, ac ornare purus ultricies a. Fusce euismod magna orci, sit amet aliquam turpis dignissim ac. In at tortor at ligula pharetra sollicitudin. Sed tincidunt, purus eget laoreet elementum, felis est pharetra ante, tincidunt feugiat libero enim sed risus. Sed at leo sit amet mi bibendum aliquam. Interdum et malesuada fames ac ante ipsum primis in faucibus. Praesent cursus varius odio, non faucibus dui. Nunc vehicula lectus sed velit suscipit aliquam vitae eu ipsum. adipiscing elit.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                <div class="accordion accordion-flush" id="accordionFlushExample2">
+                                    <div class="accordion-item">
+                                        <div class="car-amenities mb-40">
+                                            <h3 class="heading-2">Specifications</h3>
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <ul class="amenities">
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Top Speed: 270
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Fuel Type: Diesel
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Mileage: 35,200 KM
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Engine: 2901
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Gear: 4
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <ul class="amenities">
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Drive Train: Front Wheel
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Body Style: Sedan
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Year:2019
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Fuel Type: Diesel
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Interior Color: White
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <ul class="amenities">
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Doors: 4
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Horse Power: 310
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Location: Florisa, USA
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Interior Color: Black
+                                                        </li>
+                                                        <li>
+                                                            <i class="fa fa-check"></i>Security
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                                <div class="accordion accordion-flush" id="accordionFlushExample3">
+                                    <div class="accordion-item">
+                                        <div class="features-info mb-40">
+                                            <h3 class="heading-2">Features</h3>
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <ul>
+                                                        <li>
+                                                            Adaptive Cruise Control
+                                                        </li>
+                                                        <li>
+                                                            Airbags
+                                                        </li>
+                                                        <li>
+                                                            Air Conditioning
+                                                        </li>
+                                                        <li>
+                                                            Alarm System
+                                                        </li>
+                                                        <li>
+                                                            Anti-theft Protection
+                                                        </li>
+                                                        <li>
+                                                            Audio Interface
+                                                        </li>
+                                                        <li>
+                                                            Automatic Climate Control
+                                                        </li>
+                                                        <li>
+                                                            Automatic Headlights
+                                                        </li>
+                                                        <li>
+                                                            Auto Start/Stop
+                                                        </li>
+                                                        <li>
+                                                            Bi-Xenon Headlights
+                                                        </li>
+                                                        <li>
+                                                            Audio Interface
+                                                        </li>
+                                                        <li>
+                                                            Bluetooth Handset
+                                                        </li>
+                                                        <li>
+                                                            BOSE Surround Sound
+                                                        </li>
+                                                        <li>
+                                                            Burmester Surround Sound
+                                                        </li>
+                                                        <li>
+                                                            CD/DVD Autochanger
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <ul>
+                                                        <li>
+                                                            CDR Audio
+                                                        </li>
+                                                        <li>
+                                                            Cruise Control
+                                                        </li>
+                                                        <li>
+                                                            Direct Fuel Injection
+                                                        </li>
+                                                        <li>
+                                                            Electric Parking Brake
+                                                        </li>
+                                                        <li>
+                                                            Floor Mats
+                                                        </li>
+                                                        <li>
+                                                            Garage Door Opener
+                                                        </li>
+                                                        <li>
+                                                            Leather Package
+                                                        </li>
+                                                        <li>
+                                                            Locking Rear Differential
+                                                        </li>
+                                                        <li>
+                                                            Luggage Compartments
+                                                        </li>
+                                                        <li>
+                                                            Manual Transmission
+                                                        </li>
+                                                        <li>
+                                                            Navigation Module
+                                                        </li>
+                                                        <li>
+                                                            Online Services
+                                                        </li>
+                                                        <li>
+                                                            ParkAssist
+                                                        </li>
+                                                        <li>
+                                                            Porsche Communication
+                                                        </li>
+                                                        <li>
+                                                            CD/DVD Autochanger
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                                                    <ul>
+                                                        <li>
+                                                            Power Steering
+                                                        </li>
+                                                        <li>
+                                                            Reversing Camera
+                                                        </li>
+                                                        <li>
+                                                            Roll-over Protection
+                                                        </li>
+                                                        <li>
+                                                            Seat Heating
+                                                        </li>
+                                                        <li>
+                                                            Seat Ventilation
+                                                        </li>
+                                                        <li>
+                                                            Sound Package Plus
+                                                        </li>
+                                                        <li>
+                                                            Sport Chrono Package
+                                                        </li>
+                                                        <li>
+                                                            Steering Wheel Heating
+                                                        </li>
+                                                        <li>
+                                                            Tire Pressure Monitoring
+                                                        </li>
+                                                        <li>
+                                                            Universal Audio Interface
+                                                        </li>
+                                                        <li>
+                                                            Voice Control System
+                                                        </li>
+                                                        <li>
+                                                            Wind Deflector
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contact-4" role="tabpanel" aria-labelledby="contact-tab-4">
+                                <div class="accordion accordion-flush" id="accordionFlushExample4">
+                                    <div class="accordion-item">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contact-5" role="tabpanel" aria-labelledby="contact-tab-5">
+                                <div class="accordion accordion-flush" id="accordionFlushExample5">
+                                    <div class="accordion-item">
+                                        <div class="location mb-50">
+                                            <div class="map">
+                                                <h3 class="heading-2">Location</h3>
+                                                <div id="map" class="contact-map"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="contact-6" role="tabpanel" aria-labelledby="contact-tab-6">
+                                <div class="accordion accordion-flush" id="accordionFlushExample6">
+                                    <div class="accordion-item">
+                                        <div class="inside-car mb-50">
+                                            <h3 class="heading-2">
+                                                Video
+                                            </h3>
+                                            <iframe width="560" height="315" src="https://www.youtube.com/embed/xotzaT5ppSE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Heading 2 -->
+                    <h3 class="heading-2">Comments Section</h3>
+                    <!-- Comments start -->
+                    <ul class="comments">
+                        <li>
+                            <div class="comment">
+                                <div class="comment-author">
+                                    <a href="#">
+                                        <img src="/img/avatar/avatar-1.png" alt="comments-user">
+                                    </a>
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-meta">
+                                        <h6>
+                                            Maikel Alisa
+                                            <span class="float-end">11/28/2021<a href="#">Reply</a></span>
+                                        </h6>
+                                    </div>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum et vel eros. Maecenas eros enim  sem vulputate interdum et vel eros.</p>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="comment">
+                                        <div class="comment-author">
+                                            <a href="#">
+                                                <img src="/img/avatar/avatar-2.png" alt="comments-user">
+                                            </a>
+                                        </div>
+                                        <div class="comment-content">
+                                            <div class="comment-meta">
+                                                <h6>
+                                                    Carolyn Stone
+                                                    <span class="float-end">09/25/2021<a href="#">Reply</a></span>
+                                                </h6>
+                                            </div>
+                                            <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum et.</P>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <div class="comment">
+                                <div class="comment-author">
+                                    <a href="#">
+                                        <img src="/img/avatar/avatar-3.png" alt="comments-user">
+                                    </a>
+                                </div>
+                                <div class="comment-content">
+                                    <div class="comment-meta">
+                                        <h6>
+                                            Brandon Miller
+                                            <span class="float-end">07/14/2021<a href="#">Reply</a></span>
+                                        </h6>
+                                    </div>
+                                    <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum et vel eros. Maecenas eros enim.</P>
+                                </div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="comment mb-50">
+                                        <div class="comment-author">
+                                            <a href="#">
+                                                <img src="/img/avatar/avatar-4.png" alt="comments-user">
+                                            </a>
+                                        </div>
+                                        <div class="comment-content b-none">
+                                            <div class="comment-meta">
+                                                <h6>
+                                                    Michelle Nelson
+                                                    <span class="float-end">10/18/2021<a href="#">Reply</a></span>
+                                                </h6>
+                                            </div>
+                                            <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec luctus tincidunt aliquam. Aliquam gravida massa at sem vulputate interdum et vel eros. Maecenas eros enim.</P>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- Contact 2 start -->
+                    <div class="contact-1 mb-50">
+                        <h3 class="heading-2">Contact Form</h3>
+                        <form id="contact_form" action="index.html" method="GET" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group name">
+                                        <input type="text" name="name" class="form-control" placeholder="Name" aria-label="Full Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group email">
+                                        <input type="email" name="email" class="form-control" placeholder="Email Address" aria-label="Email Address">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group subject">
+                                        <input type="text" name="subject" class="form-control" placeholder="Subject" aria-label="Subject">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group number">
+                                        <input type="text" name="phone" class="form-control" placeholder="Phone" aria-label="Phone Number">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group message">
+                                        <textarea  class="form-control" name="message" placeholder="Write message" aria-label="Write message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="send-btn text-center">
+                                        <button type="submit" class="btn-6">Send Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="sidebar-right">
+                    <!-- Advanced search start -->
+                    <div class="widget advanced-search d-none d-xl-block d-lg-block">
+                        <h3 class="sidebar-title">Specifications</h3>
+                        <ul>
+                            <li>
+                                <span>Brand</span>Mercedes
+                            <li>
+                                <span>Model</span>Mercedes-Maybach S 450 4MATIC
+                            </li>
+                            <li>
+                                <span>Body Style</span>Sedan
+                            </li>
+                            <li>
+                                <span>Year</span>2022
+                            </li>
+                            <li>
+                                <span>Seating Capacity</span>5
+                            </li>
+                            <li>
+                                <span>Engine</span>2999 cc, 6 Cylinders Inline, 4 Valves/Cylinder, DOHC
+                            </li>
+                            <li>
+                                <span>Power</span>630 HP
+                            </li>
+                            <li>
+                                <span>Torque</span>500 Nm
+                            </li>
+                            <li>
+                                <span>Acceleration (0-100km/h)</span>4.8 s
+                            </li>
+                            <li>
+                                <span>Transmission</span>7-speed dual-clutch automatic transmission
+                            </li>
+                            <li>
+                                <span>Wheels Drive</span>Rear
+                            </li>
+                            <li>
+                                <span>Wheels Size</span>19 inches
+                            <li>
+                                <span>Fuel Type</span>Gasoline
+                            </li>
+                            <li>
+                                <span>Fuel Efficiency</span>11.2 l/100km
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Social sinks start -->
+                    <div class="widget social-links">
+                        <h3 class="sidebar-title">Social Links</h3>
+                        <ul class="social-list clearfix">
+                            <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
+                            <li><a href="#" class="pinterest-bg"><i class="fa fa-pinterest"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="full-page-search">
+    <button type="button" class="close">×</button>
+    <div class="full-page-search-box">
+        <form action="index.html#" class="search-boxs">
+            <input class="search" type="search" value="" placeholder="type keyword(s) here"/>
+            <button type="submit" class="btn btn-sm button-theme">Search</button>
+        </form>
+    </div>
+</div>
+
+<!-- Car Modal 2 -->
+<div class="car-model-2">
+    <div class="modal fade" id="carOverviewModal" tabindex="-1" role="dialog" aria-labelledby="carOverviewModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="carOverviewModalLabel">
+                        Find Your Dream Car
+                    </h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row modal-raw">
+                        <div class="col-lg-6 modal-left">
+                            <div class="modal-left-content">
+                                <div class="bs-example" data-example-id="carousel-with-captions">
+                                    <div class="carousel slide" id="properties-carousel" data-ride="carousel">
+                                        <div class="carousel-inner" role="listbox">
+                                            <div class="item active">
+                                                <iframe src="https://www.youtube.com/embed/V7IrnC9MISU" allowfullscreen=""></iframe>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 modal-right">
+                            <div class="modal-right-content">
+                                <section>
+                                    <h3>Features</h3>
+                                    <div class="features">
+                                        <ul class="bullets">
+                                            <li>Cruise Control</li>
+                                            <li>Airbags</li>
+                                            <li>Air Conditioning</li>
+                                            <li>Alarm System</li>
+                                            <li>Audio Interface</li>
+                                            <li>CDR Audio</li>
+                                            <li>Seat Heating</li>
+                                            <li>ParkAssist</li>
+                                        </ul>
+                                    </div>
+                                </section>
+                                <section>
+                                    <h3>Overview</h3>
+                                    <dl>
+                                        <dt>Model</dt>
+                                        <dd>Audi</dd>
+                                        <dt>Condition</dt>
+                                        <dd>Brand New</dd>
+                                        <dt>Year</dt>
+                                        <dd>2020</dd>
+                                        <dt>Price</dt>
+                                        <dd>$178,000</dd>
+                                    </dl>
+                                </section>
+                                <div class="dd">
+                                    <div class="ratings-2">
+                                        <span class="ratings-box">4.5/5</span>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <span>( 7 Reviews )</span>
+                                    </div>
+                                    <div class="btns">
+                                        <a href="car-details.html" class="btn btn-md btn-round btn-theme">Show Detail</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include("footer.ejs")%>
+<script src="/js/jquery.min.js"></script>
+<script src="/js/popper.min.js"></script>
+<script src="/js/bootstrap.bundle.min.js"></script>
+<script  src="/js/bootstrap-submenu.js"></script>
+<script  src="/js/rangeslider.js"></script>
+<script  src="/js/jquery.mb.YTPlayer.js"></script>
+<script  src="/js/bootstrap-select.min.js"></script>
+<script  src="/js/jquery.easing.1.3.js"></script>
+<script  src="/js/jquery.scrollUp.js"></script>
+<script  src="/js/jquery.mCustomScrollbar.concat.min.js"></script>
+<script  src="/js/leaflet.js"></script>
+<script  src="/js/leaflet-providers.js"></script>
+<script  src="/js/leaflet.markercluster.js"></script>
+<script  src="/js/dropzone.js"></script>
+<script  src="/js/slick.min.js"></script>
+<script  src="/js/slick.min.js"></script>
+<script  src="/js/jquery.filterizr.js"></script>
+<script  src="/js/jquery.magnific-popup.min.js"></script>
+<script  src="/js/jquery.countdown.js"></script>
+<script  src="/js/jquery.mousewheel.min.js"></script>
+<script  src="/js/lightgallery-all.js"></script>
+<script  src="/js/jnoty.js"></script>
+<script  src="/js/maps.js"></script>
+<script  src="/js/sidebar.js"></script>
+<script  src="/js/app.js"></script>
+
+<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+<script  src="/js/ie10-viewport-bug-workaround.js"></script>
+<!-- Custom javascript -->
+<script  src="/js/ie10-viewport-bug-workaround.js"></script>
+
+<script  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD4omYJlOaP814WDcCG8eubXcbhB-44Uac"></script>
+<script>
+    function LoadMap(propertes) {
+        var defaultLat = 40.7110411;
+        var defaultLng = -74.0110326;
+        var mapOptions = {
+            center: new google.maps.LatLng(defaultLat, defaultLng),
+            zoom: 15,
+            scrollwheel: false,
+            styles: [
+                {
+                    featureType: "administrative",
+                    elementType: "labels",
+                    stylers: [
+                        {visibility: "off"}
+                    ]
+                },
+                {
+                    featureType: "water",
+                    elementType: "labels",
+                    stylers: [
+                        {visibility: "off"}
+                    ]
+                },
+                {
+                    featureType: 'poi.business',
+                    stylers: [{visibility: 'off'}]
+                },
+                {
+                    featureType: 'transit',
+                    elementType: 'labels.icon',
+                    stylers: [{visibility: 'off'}]
+                },
+            ]
+        };
+        var map = new google.maps.Map(document.getElementById("map"), mapOptions);
+        var infoWindow = new google.maps.InfoWindow();
+        var myLatlng = new google.maps.LatLng(40.7110411, -74.0110326);
+
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map
+        });
+        (function (marker) {
+            google.maps.event.addListener(marker, "click", function (e) {
+                infoWindow.setContent("" +
+                    "<div class='map-properties contact-map-content'>" +
+                    "<div class='map-content'>" +
+                    "<p class='address'>20-21 Kathal St. Tampa City, FL</p>" +
+                    "<ul class='map-properties-list'> " +
+                    "<li><i class='flaticon-phone'></i>  +0477 8556 552</li> " +
+                    "<li><i class='flaticon-phone'></i>  info@themevessel.com</li> " +
+                    "<li><a href='index.html'><i class='fa fa-globe'></i>  http://www.example.com</li></a> " +
+                    "</ul>" +
+                    "</div>" +
+                    "</div>");
+                infoWindow.open(map, marker);
+            });
+        })(marker);
+    }
+    LoadMap();
+
+</script>
+
+</body>
+</html>
