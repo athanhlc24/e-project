@@ -28,9 +28,14 @@
                     </div>
                 </a>
                 <h4> <%=bestList[i].Name%> </h4>
-                <p><i class="fa-solid fa-gas-pump"></i> <%=bestList[i].Fueltype%></p>
-                <p><i class="fa-solid fa-calendar-days"></i> <%=bestList[i].Year%></p>
-                <p><i class="fa-solid fa-dollar-sign"></i> <%=bestList[i].Price%> </p>
+                <div class="row">
+                        <div class="col-md-4"><i class="fa-solid fa-gas-pump"></i>  <%=bestList[i].Fueltype%></div>
+                        <div class="col-md-4"><i class="fa-solid fa-calendar-days"></i>  <%=bestList[i].Year%></div>
+                        <div class="col-md-4"><i class="fa-solid fa-dollar-sign"></i>  <%=bestList[i].Price%></div>
+
+                </div>
+
+
 
             </div>
                 <%}%>
