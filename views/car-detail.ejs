@@ -51,7 +51,143 @@
     <![endif]-->
 </head>
 <body>
-<%- include("header.ejs") %>
+<header class="main-header sticky-header header-with-top" id="main-header-4">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="header-left">
+            <a class="navbar-brand logos" href="index.html">
+                <img src="img/logos/cm logo_br-02.png" alt="logo">
+            </a>
+        </div>
+        <button class="navbar-toggler" id="drawer" type="button">
+            <span class="fa fa-bars"></span>
+        </button>
+        <div class="header-centar">
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Home
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="home.html">Go to Homepage</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Car Listing
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">List Layout</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="car-list-rightside.html">List Right Sidebar</a></li>
+                                    <li><a class="dropdown-item" href="car-list-leftsidebar.html">List Left Sidebar</a></li>
+                                    <li><a class="dropdown-item" href="car-list-fullWidth.html">List FullWidth</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Grid Layout</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="car-grid-rightside.html">Grid Right Sidebar</a></li>
+                                    <li><a class="dropdown-item" href="car-grid-leftside.html">Grid Left Sidebar</a></li>
+                                    <li><a class="dropdown-item" href="car-grid-fullWidth.html">Grid FullWidth</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu"><a class="dropdown-item dropdown-toggle" href="#">Car Details</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="car-details.html">Car Details</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown megamenu-li">
+                        <a class="nav-link dropdown-toggle" href="" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
+                        <div class="dropdown-menu megamenu" aria-labelledby="dropdown01">
+                            <div class="megamenu-area">
+                                <div class="row">
+                                    <div class="col-sm-6 col-md-4 col-lg-4">
+                                        <div class="megamenu-section">
+                                            <h6 class="megamenu-title">Pages</h6>
+                                            <a class="dropdown-item" href="about.html">About Us</a>
+                                            <a class="dropdown-item" href="services.html">Services</a>
+                                            <a class="dropdown-item" href="agent.html">Agent</a>
+                                            <a class="dropdown-item" href="car-comparison.html">Car Compare</a>
+                                            <a class="dropdown-item" href="car-reviews.html">Car Reviews</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4 col-lg-4">
+                                        <div class="megamenu-section">
+                                            <h6 class="megamenu-title">Pages</h6>
+                                            <a class="dropdown-item" href="gallery.html">Gallery</a>
+                                            <a class="dropdown-item" href="typography.html">Typography</a>
+                                            <a class="dropdown-item" href="pricing-tables.html">Pricing Tables</a>
+                                            <a class="dropdown-item" href="elements.html">Elements</a>
+                                            <a class="dropdown-item" href="faq.html">Faq</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6 col-md-4 col-lg-4">
+                                        <div class="megamenu-section">
+                                            <h6 class="megamenu-title">Pages</h6>
+                                            <a class="dropdown-item" href="icon.html">Icons</a>
+                                            <a class="dropdown-item" href="coming-soon.html">Coming Soon</a>
+                                            <a class="dropdown-item" href="404.html">Error Page</a>
+                                            <a class="dropdown-item" href="login.html">login</a>
+                                            <a class="dropdown-item" href="signup.html">Register</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink6" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Blog
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="blog-columns-2col.html">Blog Columns 2</a></li>
+                            <li><a class="dropdown-item" href="blog-columns-3col.html">Blog Columns 3</a></li>
+                            <li><a class="dropdown-item" href="blog-right-sidebar.html">Blog Right Sidebar</a></li>
+                            <li><a class="dropdown-item" href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink7" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Shop
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="shop-list.html">Shop List</a></li>
+                            <li><a class="dropdown-item" href="shop-cart.html">Shop Cart</a></li>
+                            <li><a class="dropdown-item" href="shop-checkout.html">Shop Checkout</a></li>
+                            <li><a class="dropdown-item" href="shop-details.html">Shop Details</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="login.html" class="nav-link h-icon">
+                            <i class="flaticon-logout"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#full-page-search" class="nav-link h-icon">
+                            <i class="fa fa-search"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header-right">
+            <div class="contact-now">
+                <div class="left">
+                    <i class="fa fa-phone"></i>
+                </div>
+                <div class="right">
+                    <h5>Call</h5>
+                    <h4><a href="tel:+84-90-111-1111">+84-90-111-1111</a></h4>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
 <div class="page_loader"></div>
 
 <!-- Sidenav start -->
