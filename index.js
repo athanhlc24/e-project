@@ -40,7 +40,7 @@ function search(e){
     e.value
 }
 app.get("/",function (req, res) {
-    const sql_txt ="select Name,Year,Price,HotCars,Fueltype from cars inner join fueltypes on cars.FtID = fueltypes.FtID" ;
+    const sql_txt ="select Name,Year,Price,HotCars,Fueltype,BrName,BodyStyle from cars inner join fueltypes on cars.FtID = fueltypes.FtID inner join brands on cars.BrId=brands.BrId inner join bodystyles on cars.BdID=bodystyles.BdID" ;
 
     conn.query(sql_txt,function (err,data){
         if(err) res.send("Not Found 404");
