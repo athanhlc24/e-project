@@ -18,9 +18,11 @@
                 <div class="car-box-3">
                     <div class="car-thumbnail">
                         <a href="car-details.html" class="car-img">
-                            <div class="tag-2 bg-active" style="background-color: red; color: black"> <b> BEST SELLING</b></div>
-                            <div class="price-box-2"><sup>$</sup><%=bestList[i].Price%> </div>
-                            <img class="d-block w-100" src="img/car/car-5.png" alt="car">
+                            <div class="tag-2 bg-active" style="background-color: red; color: black;text-align: center"> <b>- <%=(100 - bestList[i].Percent)%>%</b></div>
+
+                            <div class="price-box-2" style="color: #c7dbd2"><sup>$</sup><%=(bestList[i].Price *bestList[i].Percent/100)%> </div>
+
+                            <img class="d-block w-100" src="<%=bestList[i].Image1%>" alt="car">
                         </a>
                         <div class="carbox-overlap-wrapper">
                             <div class="overlap-box">

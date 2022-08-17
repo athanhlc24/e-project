@@ -40,7 +40,7 @@ function search(e){
     e.value
 }
 app.get("/",function (req, res) {
-    const sql_txt ="select Image1,Name,Year,Price,HotCars,Fueltype,BrName,BodyStyle,Discount from cars inner join fueltypes on cars.FtID = fueltypes.FtID inner join brands on cars.BrId=brands.BrId inner join bodystyles on cars.BdID=bodystyles.BdID" ;
+    const sql_txt ="select Image1,Name,Year,Price,HotCars,Fueltype,BrName,BodyStyle,Discount,Percent from cars inner join fueltypes on cars.FtID = fueltypes.FtID inner join brands on cars.BrId=brands.BrId inner join bodystyles on cars.BdID=bodystyles.BdID" ;
 
     conn.query(sql_txt,function (err,data){
         if(err) res.send("Not Found 404");
@@ -113,7 +113,12 @@ app.get("/list-product",function (req, res) {
     });
 });
 app.get("/product",function (req,res) {
-    const sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID";
+    const selectBrand = req.query.selectBrand;
+    var sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID";
+    if(selectBrand != "" && selectBrand != undefined) {
+        sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where BrName like '" + selectBrand + "'";
+    }
+        // res.send(sql_pro)
     conn.query(sql_pro, function (err, data) {
         if (err) res.send("404 NOT FOUND");
         else{
