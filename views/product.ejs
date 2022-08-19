@@ -49,7 +49,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="selectpicker search-fields" name="default-order">
+                                <select class="selectpicker search-fields" name="orderBy">
                                     <option value="0">Default Order</option>
                                     <option value="1">Price High to Low</option>
                                     <option value="2">Price: Low to High</option>
@@ -68,57 +68,53 @@
             <div class="col-lg-8 col-md-12">
                 <div class="row">
                     <%for(var i=0;i<carlist.length;i++){%>
+                        <%if(carlist[i].Discount ==1) {%>
                     <div class="col-lg-6 col-md-6">
                         <div class="car-box">
                             <div class="photo-thumbnail">
                                 <div class="photo">
                                     <img class="d-block w-100" style="height: 250px" src="<%=carlist[i].Image1%>" alt="car">
                                     <a href="/car-detail?Image=">
-
                                     </a>
                                 </div>
-                                <div class="tag">Featured</div>
+                                <div class="tag" style="font-size: 20px"><sup>$</sup><%=(carlist[i].Price * carlist[i].Percent / 100)%></div>
+
                             </div>
-                            <div class="detail">
+                            <div class="detail" style="height: 150px">
                                 <div class="top">
                                     <h1>
-                                        <a href="/car-detail?=Name"><%=carlist[i].Name%></a><span><%=carlist[i].Price%></span>
+                                        <a href="/car-detail?=Name"><%=carlist[i].Name%></a>
                                     </h1>
+                                    <br>
                                     <p>Build year: <span><%=carlist[i].Year%></span></p>
                                 </div>
-                                <div class="footer">
-                                    <ul class="facilities-list clearfix">
-                                        <li>
-                                            <i class="flaticon-way"></i> 4,000 km
-                                        </li>
-                                        <li>
-                                            <i class="flaticon-manual-transmission"></i> Manual
-                                        </li>
-                                        <li>
-                                            <i class="flaticon-calendar-1"></i> 2021
-                                        </li>
-                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                         <%}%>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="car-box">
+                            <div class="photo-thumbnail">
+                                <div class="photo">
+                                    <img class="d-block w-100" style="height: 250px" src="<%=carlist[i].Image1%>" alt="car">
+                                    <a href="/car-detail?Image=">
+                                    </a>
+                                </div>
+                                <div class="tag" style="font-size: 20px"><sup>$</sup><%=carlist[i].Price%></div>
+
+                            </div>
+                            <div class="detail" style="height: 150px">
+                                <div class="top">
+                                    <h1>
+                                        <a href="/car-detail?=Name"><%=carlist[i].Name%></a>
+                                    </h1>
+                                    <br>
+                                    <p>Build year: <span><%=carlist[i].Year%></span></p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <%}%>
-
-                <div class="pagination-box text-center">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#"><i class="fa fa-angle-left"></i></a>
-                            </li>
-                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#"><i class="fa fa-angle-right"></i></a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
             </div>
         </div>
     </div>
