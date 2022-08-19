@@ -4566,7 +4566,7 @@ input[type=checkbox]:checked + label:before {
 /** Footer start **/
 .footer {
     padding-top: 80px;
-    background: url(../img/img-2.png);
+    background: url("/img/bg_ft/bg-ft2.jpg");
     z-index: 0;
     background-position: center center;
     background-repeat: no-repeat;

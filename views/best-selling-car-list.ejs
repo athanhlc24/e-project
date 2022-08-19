@@ -12,18 +12,21 @@
 <body>
     <div class="container">
         <div class="row">
-            <h3 id="selling"><b>BEST SELLING CAR LIST</b></h3>
-            <div class="title-border">
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
-                <div class="title-border-inner"></div>
+            <div class="main-title">
+                <h3 id="selling"><b>BEST SELLING CAR LIST</b></h3>
+                <div class="title-border">
+                    <div class="title-border-inner"></div>
+                    <div class="title-border-inner"></div>
+                    <div class="title-border-inner"></div>
+                    <div class="title-border-inner"></div>
+                </div>
             </div>
+
 
             <div class="row">
                 <%for(var i=0;i<bestList.length;i++){%>
                 <%if(bestList[i].HotCars == 1){%>
-                <div class="col-lg-4 col-md-6">
+                <div class="col-md-4">
                     <div class="car-box-3">
                         <div class="car-thumbnail">
                             <a href="car-details.html" class="car-img">
