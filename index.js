@@ -96,6 +96,11 @@ app.get("/develop",function (req, res) {
         "brandList":brandList,
     });
 });
+app.get("/acces",function (req, res) {
+    res.render("acces",{
+        "brandList":brandList,
+    });
+});
 
 app.get("/baohanh",function (req,res){
     const BrName = req.query.BrName;
@@ -104,7 +109,6 @@ app.get("/baohanh",function (req,res){
     });
 
 });
-
 app.get("/list-product",function (req, res) {
     const BrName = req.query.BrName;
     const search = req.query.search
