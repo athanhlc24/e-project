@@ -224,7 +224,8 @@ app.get("/search",function(req,res) {
 });
 app.get("/car-detail",function(req,res) {
     const name = req.query.Name;
-    const sql_cardetail = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Name like '"+name+"'";
+    const image = req.query.Image;
+    const sql_cardetail = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Name like '"+name+"' or Image1 like '"+image+"'";
     // res.send(sql_cardetail)
     conn.query(sql_cardetail, function (err, data) {
         if (err) res.send("404 Not Found");
