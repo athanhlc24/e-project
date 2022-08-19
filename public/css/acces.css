@@ -40,3 +40,17 @@ i{
     padding-top: 30px;
     padding-left: 50px;
 }
+.imgsecond{
+
+    width: 50%;
+    float: right;
+}
+.textsecond{
+    width: 50%;
+    float: left;
+}
+.second{
+    padding-top: 30px;
+    padding-left: 30px;
+    width: 100%;
+}
