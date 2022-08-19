@@ -23,43 +23,10 @@
                         <a href="car-details.html" class="car-img">
                             <div class="tag-2 bg-active" style="background-color: red; color: black;text-align: center"> <b>- <%=(100 - bestList[i].Percent)%>%</b></div>
 
-                            <div class="price-box-2" style="color: #c7dbd2"><sup>$</sup><%=(bestList[i].Price *bestList[i].Percent/100)%> </div>
+                            <div class="price-box-2" style="color: #dc3545"><sup>$</sup><%=(bestList[i].Price *bestList[i].Percent/100)%> </div>
 
-                            <img class="d-block w-100" src="<%=bestList[i].Image1%>" alt="car">
+                            <img class="d-block w-100" style="height: 250px" src="<%=bestList[i].Image1%>" alt="car">
                         </a>
-                        <div class="carbox-overlap-wrapper">
-                            <div class="overlap-box">
-                                <div class="overlap-btns-area">
-                                    <a class="overlap-btn" data-bs-toggle="modal" data-bs-target="#carOverviewModal">
-                                        <i class="fa fa-eye-slash"></i>
-                                    </a>
-                                    <a class="overlap-btn wishlist-btn">
-                                        <i class="fa fa-heart-o"></i>
-                                    </a>
-                                    <a class="overlap-btn compare-btn">
-                                        <i class="fa fa-balance-scale"></i>
-                                    </a>
-                                    <div class="car-magnify-gallery">
-                                        <a href="img/car/car-5.png" class="overlap-btn" data-sub-html="<h4>Hyundai Santa</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                            <i class="fa fa-expand"></i>
-                                            <img class="hidden" src="img/car/car-5.png" alt="hidden-img">
-                                        </a>
-                                        <a href="img/car/car-2.png" class="hidden" data-sub-html="<h4>2020 Ford Mustang</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                            <img class="hidden" src="img/car/car-2.png" alt="hidden-img">
-                                        </a>
-                                        <a href="img/car/car-3.png" class="hidden" data-sub-html="<h4>Lexus GS F</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                            <img class="hidden" src="img/car/car-3.png" alt="hidden-img">
-                                        </a>
-                                        <a href="img/car/car-4.png" class="hidden" data-sub-html="<h4>Toyota Prius specs</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                            <img class="hidden" src="img/car/car-4.png" alt="hidden-img">
-                                        </a>
-                                        <a href="img/car/car-1.png" class="hidden" data-sub-html="<h4>Toyota Prius</h4><p>A beautiful Sunrise this morning taken En-route to Keswick not one as planned but I'm extremely happy....</p>">
-                                            <img class="hidden" src="img/car/car-1.png" alt="hidden-img">
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                     <div class="detail">
                         <div id="best-color" style="height: 50px">
@@ -78,7 +45,7 @@
                             <div class="col-md-4"><i class="fa-solid fa-gas-pump"></i>  <%=bestList[i].Fueltype%></div>
                         </div>
                     </div>
-                </div>
+            </div>
             </div>
             <%}%>
             <%}%>

@@ -191,17 +191,19 @@
 <!-- Sidenav end -->
 
 <!-- Sub banner start -->
-<div class="sub-banner">
+<%for(var i =0;i<carDetail.length;i++){%>
+<div class="sub-banner" style="background-image: url('<%=carDetail[i].Image6%>');">
     <div class="container breadcrumb-area">
         <div class="breadcrumb-areas">
             <h1>Car Details</h1>
             <ul class="breadcrumbs">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li class="active">Car Details</li>
             </ul>
         </div>
     </div>
 </div>
+<%}%>
 <!-- Sub Banner end -->
 
 <!-- Car details page start -->
@@ -213,34 +215,36 @@
                     <!-- Cardetailsslider 2 start -->
                     <div class="cardetailsslider-2 mb-40">
                         <div class="main clearfix">
+                            <%for(var i =0;i<carDetail.length;i++){%>
                             <div class="slider slider-fors">
-                                <div class="slider-slider-for-photo"><img src="/img/car/C0002/C0002-1.jpg"  class="img-fluid w-100" alt="slider-car"></div>
-                                <div class="slider-slider-for-photo"><img src="/img/car/C0002/C0002-2.jpg"  class="img-fluid w-100" alt="slider-car"></div>
-                                <div class="slider-slider-for-photo"><img src="/img/car/C0002/C0002-3.jpg"  class="img-fluid w-100" alt="slider-car"></div>
-                                <div class="slider-slider-for-photo"><img src="/img/car/C0002/C0002-4.jpg"  class="img-fluid w-100" alt="slider-car"></div>
-                                <div class="slider-slider-for-photo"><img src="/img/car/C0002/C0002-5.jpg"  class="img-fluid w-100" alt="slider-car"></div>
+                                <div class="slider-slider-for-photo"><img src="<%=carDetail[i].Image1%>"  class="img-fluid w-100" alt="slider-car"></div>
+                                <div class="slider-slider-for-photo"><img src="<%=carDetail[i].Image2%>"  class="img-fluid w-100" alt="slider-car"></div>
+                                <div class="slider-slider-for-photo"><img src="<%=carDetail[i].Image3%>"  class="img-fluid w-100" alt="slider-car"></div>
+                                <div class="slider-slider-for-photo"><img src="<%=carDetail[i].Image4%>"  class="img-fluid w-100" alt="slider-car"></div>
+                                <div class="slider-slider-for-photo"><img src="<%=carDetail[i].Image5%>"  class="img-fluid w-100" alt="slider-car"></div>
                             </div>
                             <div class="slider-navs-box">
                                 <div class="slider slider-navs">
-                                    <div><img src="/img/car/C0002/C0002-1.jpg" width="72" height="44" class="slider-photo" alt="slider-car"></div>
-                                    <div><img src="/img/car/C0002/C0002-2.jpg" width="72" height="44" class="slider-photo" alt="slider-car"></div>
-                                    <div><img src="/img/car/C0002/C0002-3.jpg" width="72" height="44" class="slider-photo" alt="slider-car"></div>
-                                    <div><img src="/img/car/C0002/C0002-4.jpg" width="72" height="44" class="slider-photo" alt="slider-car"></div>
-                                    <div><img src="/img/car/C0002/C0002-5.jpg" width="72" height="44" class="slider-photo" alt="slider-car"></div>
+                                    <div><img src="<%=carDetail[i].Image1%>" width="72" height="44" class="slider-photo" alt="slider-car"></div>
+                                    <div><img src="<%=carDetail[i].Image2%>" width="72" height="44" class="slider-photo" alt="slider-car"></div>
+                                    <div><img src="<%=carDetail[i].Image3%>" width="72" height="44" class="slider-photo" alt="slider-car"></div>
+                                    <div><img src="<%=carDetail[i].Image4%>" width="72" height="44" class="slider-photo" alt="slider-car"></div>
+                                    <div><img src="<%=carDetail[i].Image5%>" width="72" height="44" class="slider-photo" alt="slider-car"></div>
                                 </div>
                             </div>
 
                             <div class="heading-car-2">
                                 <div class="pull-left">
-                                    <h3>Mercedes-Maybach S 450 4MATIC</h3>
+                                    <h3><%=carDetail[i].Name%></h3>
                                     <p>
                                         <i class="flaticon-pin"></i> 8 Ton That Thuyet, Hanoi, Vietnam
                                     </p>
                                 </div>
                                 <div class="pull-right">
-                                    <div class="price-box-3"><sup>$</sup>350,000</div>
+                                    <div class="price-box-3"><sup>$</sup><%=carDetail[i].Price%></div>
                                 </div>
                             </div>
+                            <%}%>
                         </div>
                     </div>
                     <!-- Advanced search start -->
@@ -248,48 +252,49 @@
                     <div class="widget-2 advanced-search bg-grea-2 d-lg-none d-xl-none">
                         <h3 class="sidebar-title">Specifications</h3>
                         <ul>
+                            <%for(var i =0;i<carDetail.length;i++){%>
                             <li>
-                                <span>Brand</span>Mercedes
+                                <span>Brand</span><%=carDetail[i].BrName%>
+                            <li>
+                                <span>Model</span><%=carDetail[i].Name%>
                             </li>
                             <li>
-                                <span>Model</span>Mercedes-Maybach S 450 4MATIC
+                                <span>Body Style</span><%=carDetail[i].BodyStyle%>
                             </li>
                             <li>
-                                <span>Body Style</span>Sedan
+                                <span>Year</span><%=carDetail[i].Year%>
                             </li>
                             <li>
-                                <span>Year</span>2022
+                                <span>Seating Capacity</span><%=carDetail[i].SeatingCapacity%>
                             </li>
                             <li>
-                                <span>Seating Capacity</span>5
+                                <span>Engine</span><%=carDetail[i].Engine%>
                             </li>
                             <li>
-                                <span>Engine</span>2999 cc, 6 Cylinders Inline, 4 Valves/Cylinder, DOHC
+                                <span>Power</span><%=carDetail[i].Power%>
                             </li>
                             <li>
-                                <span>Power</span>630 HP
+                                <span>Torque</span><%=carDetail[i].Torque%>
                             </li>
                             <li>
-                                <span>Torque</span>500 Nm
+                                <span>Acceleration (0-100km/h)</span><%=carDetail[i].Acceleration%>
                             </li>
                             <li>
-                                <span>Acceleration (0-100km/h)</span>4.8 s
+                                <span>Transmission</span><%=carDetail[i].Transmission%>
                             </li>
                             <li>
-                                <span>Transmission</span>7-speed dual-clutch automatic transmission
+                                <span>Drive Train</span><%=carDetail[i].WheelsDrive%>
                             </li>
                             <li>
-                                <span>Drive Train</span>Rear
+                                <span>Wheels Size</span><%=carDetail[i].Wheels%>
                             </li>
                             <li>
-                                <span>Wheels Size</span>19 inches
+                                <span>Fuel Type</span><%=carDetail[i].Fueltype%>
                             </li>
                             <li>
-                                <span>Fuel Type</span>Gasoline
+                                <span>Fuel Efficiency</span><%=carDetail[i].FuelEfficiency%>
                             </li>
-                            <li>
-                                <span>Fuel Efficiency</span>11.2 l/100km
-                            </li>
+                            <%}%>
                         </ul>
                     </div>
                     <!-- Tabbing box start -->
@@ -690,7 +695,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="send-btn text-center">
-                                        <button type="submit" class="btn-6">Send Message</button>
+                                        <button type="submit" class="btn-6">Send</button>
                                     </div>
                                 </div>
                             </div>
@@ -704,46 +709,48 @@
                     <div class="widget advanced-search d-none d-xl-block d-lg-block">
                         <h3 class="sidebar-title">Specifications</h3>
                         <ul>
+                            <%for(var i =0;i<carDetail.length;i++){%>
                             <li>
-                                <span>Brand</span>Mercedes
+                                <span>Brand</span><%=carDetail[i].BrName%>
                             <li>
-                                <span>Model</span>Mercedes-Maybach S 450 4MATIC
+                                <span>Model</span><%=carDetail[i].Name%>
                             </li>
                             <li>
-                                <span>Body Style</span>Sedan
+                                <span>Body Style</span><%=carDetail[i].BodyStyle%>
                             </li>
                             <li>
-                                <span>Year</span>2022
+                                <span>Year</span><%=carDetail[i].Year%>
                             </li>
                             <li>
-                                <span>Seating Capacity</span>5
+                                <span>Seating Capacity</span><%=carDetail[i].SeatingCapacity%>
                             </li>
                             <li>
-                                <span>Engine</span>2999 cc, 6 Cylinders Inline, 4 Valves/Cylinder, DOHC
+                                <span>Engine</span><%=carDetail[i].Engine%>
                             </li>
                             <li>
-                                <span>Power</span>630 HP
+                                <span>Power</span><%=carDetail[i].Power%>
                             </li>
                             <li>
-                                <span>Torque</span>500 Nm
+                                <span>Torque</span><%=carDetail[i].Torque%>
                             </li>
                             <li>
-                                <span>Acceleration (0-100km/h)</span>4.8 s
+                                <span>Acceleration (0-100km/h)</span><%=carDetail[i].Acceleration%>
                             </li>
                             <li>
-                                <span>Transmission</span>7-speed dual-clutch automatic transmission
+                                <span>Transmission</span><%=carDetail[i].Transmission%>
                             </li>
                             <li>
-                                <span>Wheels Drive</span>Rear
+                                <span>Drive Train</span><%=carDetail[i].WheelsDrive%>
                             </li>
                             <li>
-                                <span>Wheels Size</span>19 inches
+                                <span>Wheels Size</span><%=carDetail[i].Wheels%>
                             <li>
-                                <span>Fuel Type</span>Gasoline
+                                <span>Fuel Type</span><%=carDetail[i].Fueltype%>
                             </li>
                             <li>
-                                <span>Fuel Efficiency</span>11.2 l/100km
+                                <span>Fuel Efficiency</span><%=carDetail[i].FuelEfficiency%>
                             </li>
+                            <%}%>
                         </ul>
                     </div>
 
@@ -751,11 +758,11 @@
                     <div class="widget social-links">
                         <h3 class="sidebar-title">Social Links</h3>
                         <ul class="social-list clearfix">
-                            <li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="#" class="google-bg"><i class="fa fa-google-plus"></i></a></li>
-                            <li><a href="#" class="linkedin-bg"><i class="fa fa-linkedin"></i></a></li>
-                            <li><a href="#" class="pinterest-bg"><i class="fa fa-pinterest"></i></a></li>
+                            <li><a href="#" class="facebook-bg"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#" class="twitter-bg"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#" class="google-bg"><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a href="#" class="linkedin-bg"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#" class="pinterest-bg"><i class="fab fa-pinterest"></i></a></li>
                         </ul>
                     </div>
                 </div>

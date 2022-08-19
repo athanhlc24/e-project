@@ -31,7 +31,7 @@
                         <img src="/demo-list/demo-list.png"/>
                     </div>
                 </a>
-                <h4> <%= brnameList.BrName%> <%= listProduct[i].Name%></h4>
+                <h4> <%= brnameList.BrName%> <a href="/car-detail?Name=<%= listProduct[i].Name%>"><%= listProduct[i].Name%></a></h4>
                 <div class="row">
                     <div class="col-md-4"><i class="fa-solid fa-dollar-sign"></i> <%= listProduct[i].Price%></div>
                     <div class="col-md-4"><i class="fa-solid fa-car"></i> <%=bodyList[i].BodyStyle%></div>
