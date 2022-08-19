@@ -3,17 +3,18 @@
     color: #eeeeee;
     font-size: 20px;
 }
-.intro-trai{
+.intro-trai li{
     float: left;
     width: calc(50% - 62px);
     border:1px;
     margin: 15px;
     padding: 15px;
+    color: #EEEEEE;
 }
 .intro-phai{
     float: right;
     width: calc(50% - 62px);
-    border:1px;
+    border: 1px;
     margin: 15px;
     padding: 15px;
 }
@@ -22,4 +23,5 @@
 }
 .intro-phai ul{
     float: right;
+
 }

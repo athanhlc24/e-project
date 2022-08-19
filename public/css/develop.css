@@ -3,9 +3,11 @@
     padding-left: 40px;
     width: 60%;
     padding-bottom: 50px;
+    padding-top: 50px;
 }
 .textmain1{
     padding-left: 150px;
+    float: right;
 }
 .fonticon{
     background-color: #e6f5ff;
@@ -31,4 +33,7 @@
 }
 .col-md-3{
     margin: 35px;
+}
+.last1{
+    padding-bottom: 1000px;
 }
