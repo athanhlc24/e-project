@@ -705,13 +705,14 @@
                     <div class="widget advanced-search d-none d-xl-block d-lg-block">
                         <h3 class="sidebar-title">Specifications</h3>
                         <ul>
+                            <%for(var i =0;i<carDetail.length;i++){%>
                             <li>
-                                <span>Brandddd</span>Mercedes
+                                <span>Brand</span><%=carDetail[i].BrName%>
                             <li>
-                                <span>Model</span>Mercedes-Maybach S 450 4MATIC
+                                <span>Model</span><%=carDetail[i].Name%>
                             </li>
                             <li>
-                                <span>Body Style</span>Sedan
+                                <span>Body Style</span><%=carDetail[i].BodyStyle%>
                             </li>
                             <li>
                                 <span>Year</span>2022
@@ -745,6 +746,7 @@
                             <li>
                                 <span>Fuel Efficiency</span>11.2 l/100km
                             </li>
+                            <%}%>
                         </ul>
                     </div>
 
