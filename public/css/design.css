@@ -1,7 +1,7 @@
 .main-1{
     padding-left: 50px;
 }
-.textmain1{
+.text-main1{
     padding-left: 100px;
 }
 .vision{
@@ -35,7 +35,7 @@
 .main-3{
     padding-top: 200px;
 }
-.textmain3{
+.text-main3{
     padding-left: 200px;
 }
 #text3{
@@ -51,4 +51,7 @@
 }
 .main-5{
     padding-bottom: 50px;
+}
+.text-main4{
+    float: right;
 }
