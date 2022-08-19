@@ -1,23 +1,89 @@
-
-
-<link rel="stylesheet" href="/css/header.css">
-<div class="full-screen-preview hea-der">
-        <div class="row">
-                <div class="col-md-3 lo-go">
-                        <a href="/"><h3>CARRIO MOTOS</h3></a>
+<header class="main-header sticky-header header-with-top" id="main-header-4">
+        <nav class="navbar navbar-expand-lg navbar-light">
+                <div class="header-left">
+                        <a class="navbar-brand logos" href="/">
+                                <img src="/img/logos/cm_logo.png">
+                        </a>
                 </div>
+                <button class="navbar-toggler" id="drawer" type="button">
+                        <span class="fa fa-bars"></span>
+                </button>
+                <div class="header-centar">
+                        <div class="navbar-collapse collapse" id="navbar">
+                                <ul class="navbar-nav">
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        CAR LINES
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                        <li><a class="dropdown-item" href="/product">ALL CAR</a></li>
+                                                        <%for(var i=0;i<brandList.length;i++){%>
+                                                                <li><a href="/list-product?BrName=<%= brandList[i].BrName%>" class="dropdown-item"><%= brandList[i].BrName%></a></li>
+                                                        <%}%>
+                                                </ul>
+                                        </li>
 
-                <div class="col-md-9">
-                        <div class="box">
-                                <div class="container-1">
-                                        <form action="/search" method="get">
-                                                <span><button type="submit" class="icon"></button></span>
-                                                <input name="search" type="search" id="search" placeholder="Search..." />
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        CAR BUYING ADVICE
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                        <li><a class="dropdown-item" href="index.html">Sign up for a test drive</a></li>
+                                                        <li><a class="dropdown-item" href="index-2.html">Dealer list</a></li>
+                                                        <li><a class="dropdown-item" href="/car-price-list">Car price list</a></li>
+                                                </ul>
+                                        </li>
 
-                                        </form>
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        SERVICES
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                        <li><a class="dropdown-item" href="index.html">Warranty</a></li>
+                                                        <li><a class="dropdown-item" href="index-2.html">Accessories</a></li>
+                                                </ul>
+                                        </li>
 
+
+                                        <li class="nav-item dropdown">
+                                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        CAR WORLD
+                                                </a>
+                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                                        <li><a class="dropdown-item" href="/creation">Creation</a></li>
+                                                        <li><a class="dropdown-item" href="/design">Design and ideas</a></li>
+                                                        <li><a class="dropdown-item" href="/develop">Develope</a></li>
+                                                </ul>
+                                        </li>
+
+                                        <li class="nav-item dropdown">
+                                                <a href="#full-page-search" class="nav-link h-icon">
+                                                        <i class="fa fa-search"></i>
+                                                </a>
+                                        </li>
+                                </ul>
+                        </div>
+                </div>
+                <div class="header-right">
+                        <div class="contact-now">
+                                <div class="left">
+                                        <i class="fa fa-phone"></i>
+                                </div>
+                                <div class="right">
+                                        <h5>Call Free</h5>
+                                        <h4><a href="tel:0329226456">0329.226.456</a></h4>
                                 </div>
                         </div>
                 </div>
+        </nav>
+
+        <div id="full-page-search">
+                <button type="button" class="close">×</button>
+                <div class="full-page-search-box">
+                        <form action="/search" class="search-boxs" method="get">
+                                <input class="search" type="search" value="" placeholder="type keyword(s) here"/>
+                                <button type="submit" class="btn btn-sm button-theme">Search</button>
+                        </form>
+                </div>
         </div>
-</div>
+</header>
