@@ -252,47 +252,47 @@
                     <div class="widget-2 advanced-search bg-grea-2 d-lg-none d-xl-none">
                         <h3 class="sidebar-title">Specifications</h3>
                         <ul>
-                        <%for(var i=0;i<carDetail.length;i++){%>
+                            <%for(var i =0;i<carDetail.length;i++){%>
                             <li>
-                                <span>Brand</span>Mercedes
+                                <span>Brand</span><%=carDetail[i].BrName%>
                             <li>
-                                <span>Model</span>Mercedes-Maybach S 450 4MATIC
+                                <span>Model</span><%=carDetail[i].Name%>
                             </li>
                             <li>
-                                <span>Body Style</span>Sedan
+                                <span>Body Style</span><%=carDetail[i].BodyStyle%>
                             </li>
                             <li>
-                                <span>Year</span>2022
+                                <span>Year</span><%=carDetail[i].Year%>
                             </li>
                             <li>
-                                <span>Seating Capacity</span>5
+                                <span>Seating Capacity</span><%=carDetail[i].SeatingCapacity%>
                             </li>
                             <li>
-                                <span>Engine</span>2999 cc, 6 Cylinders Inline, 4 Valves/Cylinder, DOHC
+                                <span>Engine</span><%=carDetail[i].Engine%>
                             </li>
                             <li>
-                                <span>Power</span>630 HP
+                                <span>Power</span><%=carDetail[i].Power%>
                             </li>
                             <li>
-                                <span>Torque</span>500 Nm
+                                <span>Torque</span><%=carDetail[i].Torque%>
                             </li>
                             <li>
-                                <span>Acceleration (0-100km/h)</span>4.8 s
+                                <span>Acceleration (0-100km/h)</span><%=carDetail[i].Acceleration%>
                             </li>
                             <li>
-                                <span>Transmission</span>7-speed dual-clutch automatic transmission
+                                <span>Transmission</span><%=carDetail[i].Transmission%>
                             </li>
                             <li>
-                                <span>Drive Train</span>Rear
+                                <span>Drive Train</span><%=carDetail[i].WheelsDrive%>
                             </li>
                             <li>
-                                <span>Wheels Size</span>19 inches
+                                <span>Wheels Size</span><%=carDetail[i].Wheels%>
                             </li>
                             <li>
-                                <span>Fuel Type</span>Gasoline
+                                <span>Fuel Type</span><%=carDetail[i].Fueltype%>
                             </li>
                             <li>
-                                <span>Fuel Efficiency</span>11.2 l/100km
+                                <span>Fuel Efficiency</span><%=carDetail[i].FuelEfficiency%>
                             </li>
                             <%}%>
                         </ul>
@@ -695,7 +695,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <div class="send-btn text-center">
-                                        <button type="submit" class="btn-6">Send Message</button>
+                                        <button type="submit" class="btn-6">Send</button>
                                     </div>
                                 </div>
                             </div>
