@@ -109,7 +109,6 @@ app.get("/baohanh",function (req,res){
     });
 
 });
-
 app.get("/list-product",function (req, res) {
     const BrName = req.query.BrName;
     const search = req.query.search
