@@ -7,195 +7,121 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <%- include("css.ejs")%>
-    <link rel="stylesheet" href="/css/list-product.css"/>
-    <link rel="stylesheet" href="/css/style.css"/>
+
+
+
 
 </head>
 <%- include("header.ejs")%>
-<%- include("nav.ejs")%>
+
 <body>
+<div class="featured-car content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="sidebar-left">
 
-<div class="container">
-    <div class="row">
-        <h3 id="list">LIST CAR MERCEDES  </h3>
-
-        <div class="title-border">
-            <div class="title-border-inner"></div>
-            <div class="title-border-inner"></div>
-            <div class="title-border-inner"></div>
-            <div class="title-border-inner"></div>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-12">
-                    <div class="sidebar-left">
-                        <!-- Advanced search start -->
-                        <div class="widget widget-3 advanced-search2">
-                            <h3 class="sidebar-title">Search Cars</h3>
-                            <form method="GET">
-                                <div class="form-group">
-                                    <select class="selectpicker search-fields" name="select-brand">
-                                        <option>Select Brand</option>
-                                        <option>Audi</option>
-                                        <option>BMW</option>
-                                        <option>Honda</option>
-                                        <option>Nissan</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <select class="selectpicker search-fields" name="select-make">
-                                        <option>Select Make</option>
-                                        <option>BMW</option>
-                                        <option>Honda</option>
-                                        <option>Lamborghini</option>
-                                        <option>Sports Car</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <select class="selectpicker search-fields" name="select-location">
-                                        <option>Select Location</option>
-                                        <option>United States</option>
-                                        <option>United Kingdom</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <select class="selectpicker search-fields" name="select-year">
-                                        <option>Select Year</option>
-                                        <option>2018</option>
-                                        <option>2019</option>
-                                        <option>2020</option>
-                                        <option>2021</option>
-                                    </select>
-                                </div>
-                                <div class="form-group">
-                                    <select class="selectpicker search-fields" name="select-type">
-                                        <option>Select Type Of Car</option>
-                                        <option>New Car</option>
-                                        <option>Used Car</option>
-                                    </select>
-                                </div>
-                                <div class="range-slider clearfix">
-                                    <label>Price</label>
-                                    <div data-min="0" data-max="150000"  data-min-name="min_price" data-max-name="max_price" data-unit="USD" class="range-slider-ui ui-slider" aria-disabled="false"></div>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="faq-info other-features">
-                                    <div class="accordion accordion-flush" id="accordionFlushExample">
-                                        <div class="accordion-item">
-                                            <h2 class="accordion-header" id="flush-headingOne">
-                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="false" aria-controls="flush-collapseOne">
-                                                    Other Features
-                                                </button>
-                                            </h2>
-                                            <div id="flush-collapseOne" class="accordion-collapse collapse" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                                <div class="accordion-body">
-                                                    <h3 class="sidebar-title">Brands</h3>
-                                                    <div class="checkbox checkbox-theme checkbox-circle">
-                                                        <input id="checkbox2" type="checkbox">
-                                                        <label for="checkbox2">
-                                                            Audi
-                                                        </label>
-                                                    </div>
-                                                    <div class="checkbox checkbox-theme checkbox-circle">
-                                                        <input id="checkbox3" type="checkbox">
-                                                        <label for="checkbox3">
-                                                            BMW
-                                                        </label>
-                                                    </div>
-                                                    <div class="checkbox checkbox-theme checkbox-circle">
-                                                        <input id="checkbox4" type="checkbox">
-                                                        <label for="checkbox4">
-                                                            Honda
-                                                        </label>
-                                                    </div>
-                                                    <div class="checkbox checkbox-theme checkbox-circle">
-                                                        <input id="checkbox1" type="checkbox">
-                                                        <label for="checkbox1">
-                                                            Lamborghini
-                                                        </label>
-                                                    </div>
-                                                    <div class="checkbox checkbox-theme checkbox-circle">
-                                                        <input id="checkbox5" type="checkbox">
-                                                        <label for="checkbox5">
-                                                            Toyota
-                                                        </label>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-group mb-0">
-                                    <button class="search-button btn">Search</button>
-                                </div>
-                            </form>
-                        </div>
+                    <div class="widget widget-3 advanced-search2">
+                        <h3 class="sidebar-title">Search Cars</h3>
+                        <form method="GET">
+                            <div class="form-group">
+                                <select class="selectpicker search-fields" name="selectBrand">
+                                    <option>Select Brand</option>
+                                    <%for(var i=0;i<brandList.length;i++){%>
+                                    <option><%=brandList[i].BrName%></option>
+                                    <%}%>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="selectpicker search-fields" name="selectYear">
+                                    <option>Select Year</option>
+                                    <%for(var i=0;i<yearList.length;i++){%>
+                                    <option><%=yearList[i].Year%></option>
+                                    <%}%>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="selectpicker search-fields" name="selectBody">
+                                    <option>Select Body</option>
+                                    <%for(var i=0;i<bodyList.length;i++){%>
+                                    <option><%=bodyList[i].BodyStyle%></option>
+                                    <%}%>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="selectpicker search-fields" name="orderBy">
+                                    <option value="0">Default Order</option>
+                                    <option value="1">Price High to Low</option>
+                                    <option value="2">Price: Low to High</option>
+                                    <option value="3">Newest Properties</option>
+                                    <option value="4">Oldest Properties</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-0">
+                                <button class="search-button btn">Search</button>
+                            </div>
+                        </form>
                     </div>
                 </div>
-                <div class="col-lg-8 col-md-12">
-                    <!-- Option bar start -->
-                    <div class="option-bar clearfix">
-                        <div class="sorting-options2">
-                            <span class="sort">Sort by:</span>
-                            <select class="selectpicker search-fields" name="default-order">
-                                <option>Default Order</option>
-                                <option>Price High to Low</option>
-                                <option>Price: Low to High</option>
-                                <option>Newest Properties</option>
-                                <option>Oldest Properties</option>
-                            </select>
-                        </div>
-                        <div class="sorting-options float-right">
-                            <a href="car-list-rightside.html" class="change-view-btn active-view-btn"><i class="fa fa-th-list"></i></a>
-                            <a href="car-grid-rightside.html" class="change-view-btn"><i class="fa fa-th-large"></i></a>
-                        </div>
-                    </div>
-                    <% for (var i = 0; i < carList.length;i++){%>
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6">
-                            <div class="car-box">
-                                <div class="photo-thumbnail">
-                                    <div class="photo">
-                                        <img class="d-block w-100" src="img/car/car-1.png" alt="car">
-                                        <a href="car-details.html">
-                                            <span class="blog-one__plus"></span>
-                                        </a>
-                                    </div>
-                                    <div class="tag">Featured</div>
+            </div>
+
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <%for(var i=0;i<carlist.length;i++){%>
+                    <%if(carlist[i].Discount ==1) {%>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="car-box">
+                            <div class="photo-thumbnail">
+                                <div class="photo">
+                                    <img class="d-block w-100" style="height: 250px" src="<%=carlist[i].Image1%>" alt="car">
+                                    <a href="/car-detail?Image=">
+                                    </a>
                                 </div>
-                                <div class="detail">
-                                    <div class="top">
-                                        <h1>
-                                            <a href="car-details.html">Hyundai Santa</a><span>$850.00</span>
-                                        </h1>
-                                        <p>Build year: <span>2021</span></p>
-                                    </div>
-                                    <div class="footer">
-                                        <ul class="facilities-list clearfix">
-                                            <li>
-                                                <i class="flaticon-way"></i> 4,000 km
-                                            </li>
-                                            <li>
-                                                <i class="flaticon-manual-transmission"></i> Manual
-                                            </li>
-                                            <li>
-                                                <i class="flaticon-calendar-1"></i> 2021
-                                            </li>
-                                        </ul>
-                                    </div>
+                                <div class="tag" style="font-size: 20px"><sup>$</sup><%=(carlist[i].Price * carlist[i].Percent / 100)%></div>
+
+                            </div>
+                            <div class="detail" style="height: 150px">
+                                <div class="top">
+                                    <h1>
+                                        <a href="/car-detail?=Name"><%=carlist[i].Name%></a>
+                                    </h1>
+                                    <br>
+                                    <p>Build year: <span><%=carlist[i].Year%></span></p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <%}%>
+                    <%if(carlist[i].Discount ==0) {%>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="car-box">
+                            <div class="photo-thumbnail">
+                                <div class="photo">
+                                    <img class="d-block w-100" style="height: 250px" src="<%=carlist[i].Image1%>" alt="car">
+                                    <a href="/car-detail?Image=">
+                                    </a>
+                                </div>
+                                <div class="tag" style="font-size: 20px"><sup>$</sup><%=carlist[i].Price%></div>
+
+                            </div>
+                            <div class="detail" style="height: 150px">
+                                <div class="top">
+                                    <h1>
+                                        <a href="/car-detail?=Name"><%=carlist[i].Name%></a>
+                                    </h1>
+                                    <br>
+                                    <p>Build year: <span><%=carlist[i].Year%></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <%}%>
+                    <%}%>
                 </div>
             </div>
         </div>
-
-                        <%}%>
     </div>
 </div>
-
 </body>
 <%- include("intro-section.ejs")%>
 <%- include("footer.ejs")%>
