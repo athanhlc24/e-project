@@ -68,7 +68,7 @@
             <div class="col-lg-8 col-md-12">
                 <div class="row">
                     <%for(var i=0;i<carlist.length;i++){%>
-                        <%if(carlist[i].Discount ==1) {%>
+                    <%if(carlist[i].Discount ==1) {%>
                     <div class="col-lg-6 col-md-6">
                         <div class="car-box">
                             <div class="photo-thumbnail">
@@ -91,7 +91,8 @@
                             </div>
                         </div>
                     </div>
-                         <%}%>
+                    <%}%>
+                    <%if(carlist[i].Discount ==0) {%>
                     <div class="col-lg-6 col-md-6">
                         <div class="car-box">
                             <div class="photo-thumbnail">
@@ -115,10 +116,11 @@
                         </div>
                     </div>
                     <%}%>
+                    <%}%>
+                </div>
             </div>
         </div>
     </div>
-</div>
 </div>
 </body>
 <%- include("intro-section.ejs")%>
