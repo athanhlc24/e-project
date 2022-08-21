@@ -1,8 +1,13 @@
 .main-1{
     padding-left: 50px;
 }
+.imgmain1{
+    float: left;
+    width: 50%;
+}
 .text-main1{
     padding-left: 100px;
+    float: right;
 }
 .vision{
     padding-top: 100px;
@@ -10,7 +15,7 @@
     padding-bottom: 100px;
 }
 .inlight{
-    padding-top: 100px;
+    padding-top: 400px;
     padding-left: 100px;
     padding-bottom: 100px;
 }
@@ -20,14 +25,18 @@
 }
 #read{
     text-align: center;
+    padding-top: 21px;
+}
+a{
+    font-size: 25px;
 }
 #img1{
     padding-left: 100px;
-    padding-bottom: 30px;
 }
 .button{
-    padding-top: 50px;
+
     padding-left: 100px;
+    padding-bottom: 25px;
 }
 #imgmain3{
     padding-left: 50px;
@@ -36,7 +45,7 @@
     padding-top: 200px;
 }
 .text-main3{
-    padding-left: 200px;
+    padding-bottom: 25px;
 }
 #text3{
     padding-left: 50px;
@@ -45,13 +54,20 @@
     padding-top: 50px;
 }
 .advan-3{
-    padding-top: 100px;
+    padding-top: 50px;
     padding-left: 100px;
     padding-bottom: 25px;
 }
 .main-5{
     padding-bottom: 50px;
 }
+
 .text-main4{
     float: right;
+    padding-top: 40px;
+}
+.inlight2{
+    padding-top: 100px;
+    padding-left: 100px;
+    padding-bottom: 25px;
 }

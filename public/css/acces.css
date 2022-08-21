@@ -53,4 +53,9 @@ i{
     padding-top: 30px;
     padding-left: 30px;
     width: 100%;
+    padding-bottom: 500px;
+}
+.font{
+    text-align: left;
+    padding-top: 50px;
 }
