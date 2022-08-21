@@ -80,6 +80,11 @@ app.get("/creation",function (req, res) {
         "brandList":brandList,
     });
 });
+app.get("/our-advantage",function (req, res) {
+    res.render("our-advantage",{
+        "brandList":brandList,
+    });
+});
 app.get("/aboutus",function (req, res) {
     res.render("aboutus",{
         "brandList":brandList,
