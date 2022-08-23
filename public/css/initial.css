@@ -412,14 +412,14 @@
     position: relative;
 }
 
-/*.main-header .logos {*/
-/*    !*padding: 25px 0;*!*/
-/*    !*margin-right: 50px;*!*/
-/*    float: left;*/
-/*}*/
+.main-header .logos {
+    padding: 25px 0;
+    margin-right: 50px;
+    float: left;
+}
 
 .main-header .logos img {
-    height: 121px;
+    height: 126px;
 }
 
 .main-header .navbar-expand-lg {
