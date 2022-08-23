@@ -8,6 +8,7 @@
     <title>Document</title>
     <%- include("css.ejs")%>
     <link rel="stylesheet" href="/css/list-product.css"/>
+    <link rel="stylesheet" href="/css/midnight-blue.css"/>
 
 </head>
 
@@ -91,7 +92,8 @@
                                     </a>
                                 </div>
                                 <%if(listProduct[i].Discount ==1) {%>
-                                <div class="tag" style="font-size: 20px"><sup>$</sup><%=(listProduct[i].Price * listProduct[i].Percent / 100)%></div>
+                                <div class="tag" style="font-size: 20px"><sup>$</sup><del><%=listProduct[i].Price%></del> <sup>$</sup><%=(listProduct[i].Price * listProduct[i].Percent / 100)%></div>
+                                <div class="tag2" style="font-size: 20px">-<%=100-(listProduct[i].Percent)%>%</div>
                                 <%}%>
                                 <%if(listProduct[i].Discount ==0) {%>
                                 <div class="tag" style="font-size: 20px"><sup>$</sup><%=listProduct[i].Price%></div>
