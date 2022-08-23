@@ -80,11 +80,6 @@ app.get("/creation",function (req, res) {
         "brandList":brandList,
     });
 });
-app.get("/our-advantage",function (req, res) {
-    res.render("our-advantage",{
-        "brandList":brandList,
-    });
-});
 app.get("/aboutus",function (req, res) {
     res.render("aboutus",{
         "brandList":brandList,
@@ -114,12 +109,54 @@ app.get("/baohanh",function (req,res){
 
 });
 app.get("/list-product",function (req, res) {
-    const BrName = req.query.BrName;
+    var selectBrand = req.query.selectBrand;
+    var selectYear = req.query.selectYear;
+    var selectBody = req.query.selectBody;
+    var orderBy = req.query.orderBy;
+    var BrName = req.query.BrName;
     const search = req.query.search
-    const sql_list ="select * from cars where BrID in(select BrID from brands where BrName like '"+BrName+"');"+
+    var sql_list ="select * from cars where BrID in(select BrID from brands where BrName like '"+BrName+"');"+
         "select BrName from brands where BrName like '"+BrName+"';"+
         "select BodyStyle from bodystyles inner join cars on bodystyles.BdID = cars.BdID where BrID in(select BrID from brands where BrName like '"+BrName+"');"+
-        "select Fueltype from fueltypes inner join  cars on fueltypes.FtID = cars.FtID where BrID in(select BrID from brands where BrName like '"+BrName+"')";
+        "select Fueltype from fueltypes inner join  cars on fueltypes.FtID = cars.FtID where BrID in(select BrID from brands where BrName like '"+BrName+"');"+
+        "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID";
+    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined) {
+        sql_list = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID";
+    }
+    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined) {
+        sql_list = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and BodyStyle like '%" + selectBody + "%'";
+    }
+    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined) {
+        sql_list = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Year like '%" + selectYear + "%' and BodyStyle like '%" + selectBody + "%'";
+    }
+    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined) {
+        sql_list = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Year like '%" + selectYear + "%' and BodyStyle like '%" + selectBody + "%'";
+    }
+    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined) {
+        sql_list = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where  BodyStyle like '%" + selectBody + "%'";
+    }
+    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined) {
+        sql_list = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Year like '%" + selectYear + "%'";
+    }
+    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined) {
+        sql_list = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%'";
+    }
+    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined) {
+        sql_list = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Year like '%" + selectYear + "%'";
+    }
+
+    if (orderBy == 1) {
+        sql_list += " order by Price desc"
+    }
+    if (orderBy == 2) {
+        sql_list += " order by Price asc"
+    }
+    if (orderBy == 3) {
+        sql_list += " order by Year desc"
+    }
+    if (orderBy == 4) {
+        sql_list += " order by Year asc"
+    }
     conn.query(sql_list,function (err,data) {
         if (err) res.send("404 NOT FOUND");
         // res.send(data)
@@ -128,12 +165,16 @@ app.get("/list-product",function (req, res) {
             var bodyList = data[2];
             var fuelList = data[3];
             var brnameList =data[1][0];
+            var carlist = data[4];
             res.render("list-product",{
                 "brandList":brandList,
                 "listProduct": listProduct,
                 "bodyList":bodyList,
                 "fuelList":fuelList,
-                "brnameList":brnameList
+                "brnameList":brnameList,
+                "carlist":carlist,
+                "yearList": yearList,
+
             })
         }
 
@@ -221,7 +262,7 @@ app.get("/search",function(req,res) {
                 "searchList": searchList,
                 "brandList":brandList,
                 "yearList":yearList,
-                "carList": carList,
+                "carsList": carsList,
                 "bodyList":bodyList
             })
         }
