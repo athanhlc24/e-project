@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <%- include("css.ejs") %>
+</head>
+<body>
+<%- include("search_home.ejs")%>
+<%- include("header.ejs") %>
+<div class="contact-1 content-area-5">
+    <div class="container">
+        <!-- Main title -->
+        <div class="main-title text-center">
+            <h1 class="mb-10">Get In Touch</h1>
+            <div class="title-border">
+                <div class="title-border-inner"></div>
+                <div class="title-border-inner"></div>
+                <div class="title-border-inner"></div>
+                <div class="title-border-inner"></div>
+                <div class="title-border-inner"></div>
+            </div>
+        </div>
+        <div class="bg-white">
+            <div class="row g-0">
+                <div class="col-lg-7 col-md-12 col-sm-12 col-pad2">
+                    <!-- Contact form start -->
+                    <div class="contact-form contact-pad">
+                        <h3>Send us a Message</h3>
+                        <form id="contact_form" action="index.html" method="GET" enctype="multipart/form-data">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group name">
+                                        <input type="text" name="name" class="form-control" placeholder="Name" aria-label="Full Name">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group email">
+                                        <input type="email" name="email" class="form-control" placeholder="Email Address" aria-label="Email Address">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group subject">
+                                        <input type="text" name="subject" class="form-control" placeholder="Subject" aria-label="Subject">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group number">
+                                        <input type="text" name="phone" class="form-control" placeholder="Phone" aria-label="Phone Number">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group message">
+                                        <textarea  class="form-control" name="message" placeholder="Write message" aria-label="Write message"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="send-btn text-center">
+                                        <button type="submit" class="btn-6">Send Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <!-- Contact form end -->
+                </div>
+                <div class="col-lg-5 col-md-12 col-sm-12 col-pad2">
+                    <!-- Contact details start -->
+                    <div class="contact-details">
+                        <h3>Opening Hours</h3>
+                        <div class="ci-box d-flex">
+                            <div class="icon">
+                                <i class="fa fa-map-marker"></i>
+                            </div>
+                            <div class="detail align-self-center">
+                                <h4>Office Address</h4>
+                                <p><a><a href="https://www.google.com/maps/place/8+T%C3%B4n+Th%E1%BA%A5t+Thuy%E1%BA%BFt,+M%E1%BB%B9+%C4%90%C3%ACnh,+C%E1%BA%A7u+Gi%E1%BA%A5y,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam/@21.0288108,105.7811094,17z/data=!4m5!3m4!1s0x3135ab4cd0c66f05:0xea31563511af2e54!8m2!3d21.0288058!4d105.7826865">8 Ton That Thuyet, Cau Giay, Ha Noi</a></a></p>
+                            </div>
+                        </div>
+                        <div class="ci-box d-flex">
+                            <div class="icon">
+                                <i class="fa fa-phone"></i>
+                            </div>
+                            <div class="detail align-self-center">
+                                <h4>Phone Number</h4>
+                                <p>
+                                    <a href="tel:0329226456">Office: 0329 226 456</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="ci-box d-flex">
+                            <div class="icon">
+                                <i class="fa fa-envelope"></i>
+                            </div>
+                            <div class="detail align-self-center">
+                                <h4>Email Address</h4>
+                                <p>
+                                    <a href="mailto:info@carriomotors.com">info@carriomotors.com</a>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="ci-box d-flex mb-40">
+                            <div class="icon">
+                                <i class="fa fa-fax"></i>
+                            </div>
+                            <div class="detail align-self-center">
+                                <h4>Fax:</h4>
+                                <p>
+                                    <a href="tel:0243888888">0243 888888</a>
+                                </p>
+                            </div>
+                        </div>
+                        <h3>Follow Us</h3>
+                        <ul class="social-list clearfix">
+                            <li>
+                                <a href="#" class="facebook-bg">
+                                    <i class="fa-brands fa-facebook"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="twitter-bg">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="linkedin-bg">
+                                    <i class="fa-brands fa-linkedin-in"></i>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="google-bg">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Contact details end -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<%- include("footer.ejs") %>
+</body>
+
+</html>
