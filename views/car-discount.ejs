@@ -19,19 +19,21 @@
             <%if(bestList[i].Discount == 1){%>
             <div class="col-lg-4 col-md-6">
                 <div class="car-box-3">
+                    <a href="/car-detail?Image=<%=bestList[i].Image1%>" class="car-img">
                     <div class="car-thumbnail">
-                        <a href="car-details.html" class="car-img">
+
                             <div class="tag-2 bg-active" style="background-color: red; color: black;text-align: center"> <b>- <%=(100 - bestList[i].Percent)%>%</b></div>
 
                             <div class="price-box-2" style="color: #dc3545"><sup>$</sup><%=(bestList[i].Price *bestList[i].Percent/100)%> </div>
 
                             <img class="d-block w-100" style="height: 250px" src="<%=bestList[i].Image1%>" alt="car">
-                        </a>
+
                     </div>
+                    </a>
                     <div class="detail">
                         <div id="best-color" style="height: 50px">
                             <h1 class="title">
-                                <a href="car-details.html"><%=bestList[i].BrName%> <%=bestList[i].Name%></a>
+                                <a href="/car-detail?Name=<%=bestList[i].Name%>"><%=bestList[i].BrName%> <%=bestList[i].Name%></a>
                             </h1>
                         </div>
                         <div class="location">
