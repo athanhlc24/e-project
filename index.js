@@ -100,6 +100,12 @@ app.get("/acces",function (req, res) {
         "brandList":brandList,
     });
 });
+app.get("/contact",function (req, res) {
+    res.render("contact",{
+        "brandList":brandList,
+    });
+});
+
 
 app.get("/baohanh",function (req,res){
     const BrName = req.query.BrName;
