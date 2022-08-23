@@ -67,31 +67,7 @@
             <div class="col-lg-8 col-md-12">
                 <div class="row">
                     <%for(var i=0;i<searchList.length;i++){%>
-                    <%if(searchList[i].Discount ==1) {%>
-                    <div class="col-lg-6 col-md-6">
-                        <div class="car-box">
-                            <div class="photo-thumbnail">
-                                <div class="photo">
-                                    <img class="d-block w-100" style="height: 250px" src="<%=searchList[i].Image1%>" alt="car">
-                                    <a href="/car-detail?Image=<%=searchList[i].Image1%>">
-                                    </a>
-                                </div>
-                                <div class="tag" style="font-size: 20px"><sup>$</sup><%=(searchList[i].Price * searchList[i].Percent / 100)%></div>
 
-                            </div>
-                            <div class="detail" style="height: 150px">
-                                <div class="top">
-                                    <h1>
-                                        <a href="/car-detail?Name=<%=searchList[i].Name%>"><%=searchList[i].BrName%> <%=searchList[i].Name%></a>
-                                    </h1>
-                                    <br>
-                                    <p>Build year: <span><%=searchList[i].Year%></span></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <%}%>
-                    <%if(searchList[i].Discount ==0) {%>
                     <div class="col-lg-6 col-md-6">
                         <div class="car-box">
                             <div class="photo-thumbnail">
@@ -100,8 +76,13 @@
                                     <a href="/car-detail?Image=<%=searchList[i].Image1%>">
                                     </a>
                                 </div>
+                                <%if(searchList[i].Discount ==1) {%>
+                                <div class="tag" style="font-size: 20px"><del><sup>$</sup><%=searchList[i].Price%></del> <sup>$</sup><%=(searchList[i].Price * searchList[i].Percent / 100)%></div>
+                                <div class="tag2" style="font-size: 20px">-<%=100 -(searchList[i].Percent)%>%</div>
+                                <%}%>
+                                <%if(searchList[i].Discount ==0) {%>
                                 <div class="tag" style="font-size: 20px"><sup>$</sup><%=searchList[i].Price%></div>
-
+                                <%}%>
                             </div>
                             <div class="detail" style="height: 150px">
                                 <div class="top">
@@ -109,12 +90,16 @@
                                         <a href="/car-detail?Name=<%=searchList[i].Name%>"><%=searchList[i].BrName%> <%=searchList[i].Name%></a>
                                     </h1>
                                     <br>
-                                    <p>Build year: <span><%=searchList[i].Year%></span></p>
+                                    <div class="row" id="best-color">
+                                        <div class="col-md-4"><i class="fa-solid fa-calendar-days"></i> <%= searchList[i].Year%> </div>
+                                        <div class="col-md-4"><i class="fa-solid fa-car"></i>  <%=searchList[i].BodyStyle%></div>
+                                        <div class="col-md-4"><i class="fa-solid fa-gas-pump"></i>  <%=searchList[i].Fueltype%></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <%}%>
+
                     <%}%>
                 </div>
             </div>
