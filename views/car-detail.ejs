@@ -241,7 +241,7 @@
                                     </p>
                                 </div>
                                 <div class="pull-right">
-                                    <div class="price-box-3"><sup>$</sup><%=carDetail[i].Price%></div>
+                                    <div class="price-box-3"><sup>$</sup><%=carDetail[i].PriceText%></div>
                                 </div>
                             </div>
                             <%}%>
@@ -770,6 +770,8 @@
         </div>
     </div>
 </div>
+<%- include("footer.ejs")%>
+<!-- Full Page Search -->
 <div id="full-page-search">
     <button type="button" class="close">×</button>
     <div class="full-page-search-box">
@@ -860,7 +862,7 @@
         </div>
     </div>
 </div>
-<%- include("footer.ejs")%>
+
 <script src="/js/jquery.min.js"></script>
 <script src="/js/popper.min.js"></script>
 <script src="/js/bootstrap.bundle.min.js"></script>
@@ -875,7 +877,6 @@
 <script  src="/js/leaflet-providers.js"></script>
 <script  src="/js/leaflet.markercluster.js"></script>
 <script  src="/js/dropzone.js"></script>
-<script  src="/js/slick.min.js"></script>
 <script  src="/js/slick.min.js"></script>
 <script  src="/js/jquery.filterizr.js"></script>
 <script  src="/js/jquery.magnific-popup.min.js"></script>
@@ -953,7 +954,6 @@
         })(marker);
     }
     LoadMap();
-
 </script>
 
 </body>
