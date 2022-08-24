@@ -1,26 +1,6 @@
-.imag{
-    margin-right: 10px;
-    font-size: 100px;
-    padding-left: 100px;
+.col-lg-4{
+    padding-bottom: 50px;
 }
-.car-left{
-    width: 50%;
-    padding-top: 100px;
-    padding-left: 50px;
+i{
+    padding-left: 45px;
 }
-.car{
-    float: right;
-    width: 50%;
-    padding-left: 50px;
-}
-.main{
-    padding-top: 100px;
-}
-.content{
-    padding-bottom: 500px;
-}
-h2{
-    text-align: center;
-}
-
-

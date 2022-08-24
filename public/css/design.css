@@ -31,6 +31,7 @@ a{
     font-size: 25px;
 }
 #img1{
+    padding-top: 50px;
     padding-left: 100px;
 }
 .button{
@@ -60,14 +61,24 @@ a{
 }
 .main-5{
     padding-bottom: 50px;
+    width: 100%;
+    padding-bottom: 500px;
 }
-
+.lastt{
+    width: 50%;
+}
 .text-main4{
     float: right;
     padding-top: 40px;
+    width: 50%;
 }
 .inlight2{
     padding-top: 100px;
     padding-left: 100px;
     padding-bottom: 25px;
+}
+.imgmain1{
+    padding-top: 50px;
+    float: left;
+    width: 50%;
 }
