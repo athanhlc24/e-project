@@ -612,7 +612,7 @@
 }
 
 #main-header-4 .contact-now .right {
-    padding-left: 10px;
+    padding-left: 20px;
 }
 
 #main-header-4 .contact-now .right h5{
@@ -625,7 +625,7 @@
 }
 
 #main-header-4 .contact-now .right h4{
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 500;
     margin: 0;
     font-family: 'Open Sans', sans-serif;
@@ -636,8 +636,8 @@
 }
 
 #main-header-4 .header-right {
-    width: 25%;
-    padding: 33px 0 22.5px 20px;
+    width: 30%;
+    padding: 20px 0 22.5px 20px;
 }
 
 #main-header-4 .header-left{
