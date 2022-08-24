@@ -8,6 +8,7 @@
     <title>Document</title>
     <%- include("css.ejs")%>
     <link rel="stylesheet" href="/css/list-product.css"/>
+    <link rel="stylesheet" href="/css/midnight-blue.css"/>
 
 </head>
 
@@ -17,7 +18,9 @@
 <%- include("header.ejs")%>
 <div class="container">
     <div class="row">
-        <h3 id="list">LIST CAR MERCEDES  </h3>
+
+            <h1 id="list">List Cars <%=brnameList.BrName%></h1>
+
 
         <div class="title-border">
             <div class="title-border-inner"></div>
@@ -25,30 +28,99 @@
             <div class="title-border-inner"></div>
             <div class="title-border-inner"></div>
         </div>
-        <% for (var i = 0; i < listProduct.length;i++){%>
-            <div class="col-md-3.5 list-product">
-                <a href="#">
-                    <div class="thumb">
-                        <img src="/demo-list/demo-list.png"/>
+
+<div class="featured-car content-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-12">
+                <div class="sidebar-left">
+
+                    <div class="widget widget-3 advanced-search2">
+                        <h3 class="sidebar-title">Search Cars</h3>
+                        <form action="/product" method="GET">
+                            <div class="form-group">
+                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectBrand">
+                                    <option>Select Brand</option>
+                                    <%for(var i=0;i<brandList.length;i++){%>
+                                    <option><%=brandList[i].BrName%></option>
+                                    <%}%>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectYear">
+                                    <option>Select Year</option>
+                                    <%for(var i=0;i<yearList.length;i++){%>
+                                    <option><%=yearList[i].Year%></option>
+                                    <%}%>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectBody">
+                                    <option>Select Body</option>
+                                    <%for(var i=0;i<bodyList.length;i++){%>
+                                    <option><%=bodyList[i].BodyStyle%></option>
+                                    <%}%>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="search-fields" style="width: 360px;font-size: 14px" name="orderBy">
+                                    <option value="0">Default Order</option>
+                                    <option value="1">Price High to Low</option>
+                                    <option value="2">Price: Low to High</option>
+                                    <option value="3">Newest Properties</option>
+                                    <option value="4">Oldest Properties</option>
+                                </select>
+                            </div>
+                            <div class="form-group mb-0">
+                                <button class="search-button btn">Search</button>
+                            </div>
+                        </form>
                     </div>
-                </a>
-                <h4> <%= brnameList.BrName%> <a href="/car-detail?Name=<%= listProduct[i].Name%>"><%= listProduct[i].Name%></a></h4>
-                <div class="row">
-                    <div class="col-md-4"><i class="fa-solid fa-dollar-sign"></i> <%= listProduct[i].Price%></div>
-                    <div class="col-md-4"><i class="fa-solid fa-car"></i> <%=bodyList[i].BodyStyle%></div>
-                    <div class="col-md-4"><i class="fa-solid fa-gas-pump"></i> <%=fuelList[i].Fueltype%></div>
                 </div>
             </div>
-        <%}%>
-        <div class="col-md-1.5 sort">
-            <form>
-                <select name="thanhpho">
-                    <option value="">Sort</option>
-                    <option value="hn">Low to high</option>
-                    <option value="sg">High to low</option>
-                </select>
-            </form>
+
+            <div class="col-lg-8 col-md-12">
+                <div class="row">
+                    <% for (var i = 0; i < listProduct.length;i++){%>
+
+                    <div class="col-lg-6 col-md-6">
+                        <div class="car-box">
+                            <div class="photo-thumbnail">
+                                <div class="photo">
+                                    <img class="d-block w-100" style="height: 250px" src="<%=listProduct[i].Image1%>" alt="car">
+                                    <a href="/car-detail?Image=<%=listProduct[i].Image1%>">
+                                    </a>
+                                </div>
+                                <%if(listProduct[i].Discount ==1) {%>
+                                <div class="tag" style="font-size: 20px"><sup>$</sup><del><%=listProduct[i].Price%></del> <sup>$</sup><%=(listProduct[i].Price * listProduct[i].Percent / 100)%></div>
+                                <div class="tag2" style="font-size: 20px">-<%=100-(listProduct[i].Percent)%>%</div>
+                                <%}%>
+                                <%if(listProduct[i].Discount ==0) {%>
+                                <div class="tag" style="font-size: 20px"><sup>$</sup><%=listProduct[i].Price%></div>
+                                <%}%>
+                            </div>
+                            <div class="detail" style="height: 150px">
+                                <div class="top">
+                                    <h1>
+                                        <a href="/car-detail?Name=<%=listProduct[i].Name%>"><%=listProduct[i].BrName%> <%=listProduct[i].Name%></a>
+                                    </h1>
+                                    <br>
+                                    <div class="row" id="best-color">
+                                        <div class="col-md-4"><i class="fa-solid fa-calendar-days"></i> <%= carlist[i].Year%> </div>
+                                        <div class="col-md-4"><i class="fa-solid fa-car"></i>  <%=carlist[i].BodyStyle%></div>
+                                        <div class="col-md-4"><i class="fa-solid fa-gas-pump"></i>  <%=carlist[i].Fueltype%></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <%}%>
+                </div>
+            </div>
         </div>
+    </div>
+</div>
     </div>
 </div>
 </body>

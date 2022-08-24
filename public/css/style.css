@@ -2083,8 +2083,15 @@ input[type=checkbox]:checked + label:before {
 .car-box:hover .tag {
     background: #fff;
 }
+.car-box:hover .tag2 {
+    background: #fff;
+    color: red;
+}
 
 .car-box:hover  .tag::after {
+    border-left: 10px solid #fff;
+}
+.car-box:hover  .tag2::after {
     border-left: 10px solid #fff;
 }
 
@@ -5906,7 +5913,6 @@ input[type=checkbox]:checked + label:before {
 .contact-1 .contact-details{
     background: #fff;
     padding: 50px;
-    background: rgba(0, 0, 0, 0.04) url(../img/banner/img-6.png) top left repeat;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -5920,7 +5926,7 @@ input[type=checkbox]:checked + label:before {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #191fcb;
+    background-color: #2c2cec;
     content: "";
     z-index: -1;
     opacity: 0.7;
@@ -10321,7 +10327,33 @@ table {
         display: none;
     }
 }
+.tag2 {
 
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    z-index: 20;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: rgb(255, 255, 255);
+    padding: 7px 14px 5px;
+    font-weight: 600;
+    border-radius: 13px 13px 13px 13px;
+    font-family: 'Raleway', sans-serif;
+}
+
+.tag2::after {
+
+    position: absolute;
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 0;
+    border-bottom: 7px solid transparent;
+    bottom: 7px;
+    right: 0;
+}
 
 
 

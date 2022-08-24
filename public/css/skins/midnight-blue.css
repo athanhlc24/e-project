@@ -77,6 +77,9 @@
 .car-box:hover .tag {
     color: #f0151f;
 }
+.car-box:hover .tag2 {
+    color: #f0151f;
+}
 
 .car-box:hover .facilities-list li i{
     color: #f0151f;
@@ -492,8 +495,14 @@ input[type=checkbox]:checked + label:before {
 .tag {
     background:#f0151f;
 }
+.tag2 {
+    background:#f0151f;
+}
 
 .tag::after {
+    border-left: 10px solid#f0151f;
+}
+.tag2::after {
     border-left: 10px solid#f0151f;
 }
 
@@ -1021,4 +1030,3 @@ li.active.filtr-button.filtr a{
     }
 
 }
-

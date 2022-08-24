@@ -26,20 +26,28 @@
             <div class="row">
                 <%for(var i=0;i<bestList.length;i++){%>
                 <%if(bestList[i].HotCars == 1){%>
+
                 <div class="col-md-4">
                     <div class="car-box-3">
+                        <a href="/car-detail?Image=<%=bestList[i].Image1%>" class="car-img">
                         <div class="car-thumbnail">
-                            <a href="car-details.html" class="car-img">
+
                                 <div class="tag-2 bg-active" style="background-color: red; color: black;text-align: center"> <b> BEST SELLING</b></div>
-                                <div class="price-box-2" style="color: #dc3545"><sup>$</sup><%=bestList[i].Price%> </div>
+                            <%if(bestList[i].Discount == 1){%>
+                                <div class="price-box-2" style="color: white"><sup>$</sup><%=(bestList[i].Price * bestList[i].Percent/100)%> </div>
+                            <%}%>
+                            <%if(bestList[i].Discount == 0){%>
+                            <div class="price-box-2" style="color: white"><sup>$</sup><%=bestList[i].Price%> </div>
+                            <%}%>
                                 <img class="d-block w-100" style="height: 250px" src="<%=bestList[i].Image1%>" alt="car">
-                            </a>
+
 
                         </div>
+                        </a>
                         <div class="detail">
                             <div style=" height: 50px; color: #dc3545 ">
                             <h1 class="title">
-                                <a href="car-details.html"><%=bestList[i].BrName%> <%=bestList[i].Name%></a>
+                                <a href="/car-detail?Name=<%=bestList[i].Name%>"><%=bestList[i].BrName%> <%=bestList[i].Name%></a>
                             </h1>
                             </div>
                             <div class="location">
