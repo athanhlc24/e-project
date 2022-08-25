@@ -32,7 +32,8 @@
 }
 .videoo{
     padding-left: 50px;
-    padding-top: 50px;
+    padding-top: 100px;
+    padding-left: 300px;
 }
 .mainn4{
     padding-top: 30px;
@@ -56,4 +57,7 @@
 .font{
     text-align: left;
 
+}
+.listphutung{
+    padding-bottom: 50px;
 }
