@@ -42,8 +42,9 @@
     padding-left: 10px;
 }
 .col-md-3{
-    margin: 35px;
+    /*margin: 35px;*/
 }
 .last1{
-    padding-bottom: 1000px;
+    padding-top: 500px;
+    padding-bottom: 400px;
 }
