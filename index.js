@@ -180,7 +180,7 @@ app.get("/list-product",function (req, res) {
                 "brnameList":brnameList,
                 "carlist":carlist,
                 "yearList": yearList,
-
+                "selectBrand":selectBrand
             })
         }
 
