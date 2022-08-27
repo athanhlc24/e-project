@@ -30,10 +30,6 @@ img {
     margin-top: 25px;
     border: none;
 }
-section{
-    background-color: black;
-    color: white;
-}
 .warranty-container{
     border: none;
     margin: 25px;
@@ -79,4 +75,8 @@ section{
 }
 .warranty-container>ul>li{
     list-style: circle;
+    font-size: 15px;
+}
+.navtrai{
+    float: left;
 }
