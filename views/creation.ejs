@@ -1,96 +1,80 @@
-<link rel="stylesheet" href="/css/creation.css">
-<%- include("css.ejs") %>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Creation</title>
+    <link rel="stylesheet" href="/css/aboutus.css">
+    <%- include("css.ejs") %>
+</head>
 <body>
 <%- include("header.ejs") %>
-
-    <div class="chiacollg4">
-            <div class=" col-lg-4">
-                <div class="img12">
-                    <img width="355" height="237" src="/carworld/cre1.jpg">
-                </div>
-                <div class="text12">
-                    <p>Nguyen Quang Thai <i id="mot" class="glyphicon glyphicon-calendar"></i> 73K <i id="mot" class="glyphicon glyphicon-comment">17K</i></p>
-                    <h2>Selling Your New Cars?</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
-                </div>
-            </div>
-    </div>
-
-    <div class="chiacollg4">
-        <div class="col-lg-4">
-                <div class="img12">
-                    <img width="355" height="237" src="/carworld/cre2.jpg">
-                </div>
-                <div class="text12">
-                    <p> Pham Duy Hung <i id="mot" class="glyphicon glyphicon-calendar"></i> 24K <i id="mot" class="glyphicon glyphicon-comment">12K</i></p>
-                    <h2>Find Your Dream Car</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
-                </div>
-        </div>
-    </div>
-
-
-    <div class="chiacollg4">
-        <div class="col-lg-4">
-                <div class="img12">
-                    <img width="355" height="237" src="/carworld/cre3.jpg">
-                </div>
-                <div class="text12">
-                    <p>Ha Hoang Hung <i id="mot" class="glyphicon glyphicon-calendar"></i> 73K <i id="mot" class="glyphicon glyphicon-comment">17K</i></p>
-                    <h2>Buying a Best Sports Car</h2>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
-                </div>
-        </div>
-    </div>
-
-
-
-    <div class="chiacollg4">
-        <div class="col-lg-4">
-            <div class="img12">
-                <img width="355" height="237" src="/carworld/audi.jpg">
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <img src="/carworld/cre1.jpg">
             </div>
             <div class="text12">
-                <p>Tran Van Thanh <i id="mot" class="glyphicon glyphicon-calendar"></i> 64K <i id="mot" class="glyphicon glyphicon-comment">22K</i></p>
-                <h2>Try get a new car</h2>
+                <p>Nguyen Quang Thai <i class="glyphicon glyphicon-calendar"></i> 73K <i class="glyphicon glyphicon-comment">17K</i></p>
+                <div style="font-size: 23px;font-weight: bold" >Selling Your New Cars?</div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div>
+                <img src="/carworld/cre2.jpg">
+            </div>
+            <div class="text12">
+                <p> Pham Duy Hung <i id="mot" class="glyphicon glyphicon-calendar"></i> 24K <i id="mot" class="glyphicon glyphicon-comment"></i>12K</p>
+                <div style="font-size: 23px;font-weight: bold" >Find Your Dream Car</div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div>
+                <img src="/carworld/cre3.jpg">
+            </div>
+            <div class="text12">
+                <p>Ha Hoang Hung <i id="mot" class="glyphicon glyphicon-calendar"></i> 73K <i id="mot" class="glyphicon glyphicon-comment"></i>17K</p>
+                <div style="font-size: 23px;font-weight: bold" >Buying a Best Sports Car</div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div>
+                <img src="/carworld/audi.jpg">
+            </div>
+            <div class="text12">
+                <p>Tran Van Thanh <i id="mot" class="glyphicon glyphicon-calendar"></i> 64K <i id="mot" class="glyphicon glyphicon-comment"></i>22K</p>
+                <div style="font-size: 23px;font-weight: bold" >Try get a new car</div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div>
+                <img  src="/carworld/bmw.jpg">
+            </div>
+            <p>Maria Blank <i id="mot" class="glyphicon glyphicon-calendar"></i> 12K <i id="mot" class="glyphicon glyphicon-comment"></i>15K</p>
+            <div style="font-size: 23px;font-weight: bold" > Sports Car</div>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
+        </div>
+        <div class="col-md-4">
+            <div>
+                <img  src="/carworld/merc.jpg">
+            </div>
+            <div class="text12">
+                <p>Maria Blank <i class="glyphicon glyphicon-calendar"></i> 98K <i class="glyphicon glyphicon-comment"></i>54K</p>
+
+                <div style="font-size: 23px;font-weight: bold" >Buying a Best Sports Car</div>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
             </div>
         </div>
     </div>
-
-
-
-    <div class="chiacollg4">
-        <div class="col-lg-4">
-            <div class="img12">
-                <img width="355" height="237" src="/carworld/bmw.jpg">
-            </div>
-            <div class="text12">
-                <p>Maria Blank <i id="mot" class="glyphicon glyphicon-calendar"></i> 12K <i id="mot" class="glyphicon glyphicon-comment">15K</i></p>
-                <h2>Find Your Dream Car</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
-            </div>
-        </div>
-    </div>
-
-
-
-    <div class="chiacollg4">
-        <div class="col-lg-4">
-            <div class="img12">
-                <img width="355" height="237" src="/carworld/merc.jpg">
-            </div>
-            <div class="text12">
-                <p>Maria Blank <i class="glyphicon glyphicon-calendar"></i> 98K <i class="glyphicon glyphicon-comment">54K</i></p>
-
-                <h2>Selling Your New Cars?</h2>
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
-            </div>
-        </div>
-    </div>
-
-<div class="latts">
 </div>
+
 <%- include("footer.ejs") %>
 </body>
+</html>
