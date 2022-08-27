@@ -1,6 +1,9 @@
-
+#hai{
+    font-size: 15px;
+}
 .last{
     padding-bottom: 100px;
+    padding-top: 50px;
 }
 .welcome{
     padding-top: 100px;
@@ -13,7 +16,4 @@
     background-color: #e2e5e5;
     margin-top: 15px;
     margin-bottom: 20px;
-}
-#1{
-    color: #ed1c24;
 }
