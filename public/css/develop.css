@@ -21,7 +21,9 @@
 }
 .fonticon{
     background-color: #e6f5ff;
-    width: 100px;
+    font-size: 20px;
+    padding-left: 30px;
+    width: 40%;
 }
 .main-2{
     padding-top: 50px;
@@ -30,12 +32,12 @@
 .video{
     padding-left: 50px;
 }
-/*.font{*/
-/*    text-align: center;*/
-/*    padding-top: 50px;*/
-/*    padding-bottom: 50px;*/
-/*    font-size: 20px;*/
-/*}*/
+.font{
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    font-size: 20px;
+}
 .chiacolmd5{
     padding-left: 100px;
     width: 100%;
@@ -44,5 +46,11 @@
     padding-top: 500px;
     padding-bottom: 400px;
     padding-left: 150px;
+}
 
+.chiacolmd3:hover{
+    -webkit-transform: translateY(-5px);
+    transform: translateY(-5px);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 2px 2px 7px #dc3545;
 }
