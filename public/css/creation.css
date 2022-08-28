@@ -1,26 +1,19 @@
-.imag{
-    margin-right: 10px;
-    font-size: 100px;
-    padding-left: 100px;
-}
-.car-left{
-    width: 50%;
-    padding-top: 100px;
-    padding-left: 50px;
-}
-.car{
-    float: right;
-    width: 50%;
-    padding-left: 50px;
-}
-.main{
-    padding-top: 100px;
-}
-.content{
-    padding-bottom: 500px;
-}
-h2{
-    text-align: center;
-}
+/*.col-lg-4{*/
+/*    padding-bottom: 80px;*/
 
-
+/*}*/
+/*#mot{*/
+/*    text-align: center;*/
+/*}*/
+/*.latts{*/
+/*    padding-bottom: 1000px;*/
+/*}*/
+/*.chiacollg4{*/
+/*    padding-left: 30px;*/
+/*}*/
+/*.chiacollg4:hover{*/
+/*    -webkit-transform: translateY(-5px);*/
+/*    transform: translateY(-5px);*/
+/*    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);*/
+/*    box-shadow: 2px 2px 7px #dc3545;*/
+/*}*/

@@ -1,74 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
-    <title>world car</title>
-    <link rel="stylesheet" href="/css/creation.css">
+    <title>Creation</title>
+    <link rel="stylesheet" href="/css/aboutus.css">
     <%- include("css.ejs") %>
 </head>
 <body>
-<%- include("search_home.ejs")%>
 <%- include("header.ejs") %>
-<div  class="main">
-    <img width="100%" src="../carworld/bmw.jpg" >
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div>
+                <img src="/carworld/cre1.jpg">
+            </div>
+            <div class="text12">
+                <p>Nguyen Quang Thai <i class="glyphicon glyphicon-calendar"></i> 73K <i class="glyphicon glyphicon-comment">17K</i></p>
+                <div style="font-size: 23px;font-weight: bold" >Selling Your New Cars?</div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
+            </div>
+        </div>
+
+
+        <div class="col-md-4">
+            <div>
+                <img src="/carworld/cre2.jpg">
+            </div>
+            <div class="text12">
+                <p> Pham Duy Hung <i id="mot" class="glyphicon glyphicon-calendar"></i> 24K <i id="mot" class="glyphicon glyphicon-comment"></i>12K</p>
+                <div style="font-size: 23px;font-weight: bold" >Find Your Dream Car</div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div>
+                <img src="/carworld/cre3.jpg">
+            </div>
+            <div class="text12">
+                <p>Ha Hoang Hung <i id="mot" class="glyphicon glyphicon-calendar"></i> 73K <i id="mot" class="glyphicon glyphicon-comment"></i>17K</p>
+                <div style="font-size: 23px;font-weight: bold" >Buying a Best Sports Car</div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div>
+                <img src="/carworld/audi.jpg">
+            </div>
+            <div class="text12">
+                <p>Tran Van Thanh <i id="mot" class="glyphicon glyphicon-calendar"></i> 64K <i id="mot" class="glyphicon glyphicon-comment"></i>22K</p>
+                <div style="font-size: 23px;font-weight: bold" >Try get a new car</div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div>
+                <img  src="/carworld/bmw.jpg">
+            </div>
+            <p>Maria Blank <i id="mot" class="glyphicon glyphicon-calendar"></i> 12K <i id="mot" class="glyphicon glyphicon-comment"></i>15K</p>
+            <div style="font-size: 23px;font-weight: bold" > Sports Car</div>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
+        </div>
+        <div class="col-md-4">
+            <div>
+                <img  src="/carworld/merc.jpg">
+            </div>
+            <div class="text12">
+                <p>Maria Blank <i class="glyphicon glyphicon-calendar"></i> 98K <i class="glyphicon glyphicon-comment"></i>54K</p>
+
+                <div style="font-size: 23px;font-weight: bold" >Buying a Best Sports Car</div>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy,</p>
+            </div>
+        </div>
+    </div>
 </div>
-<div class="content">
-    <div class="car-left">
-        <div class="imag">
-            <img src="../carworld/audi.jpg" >
-        </div>
-        <div class="textcar">
-            <h2> Audi </h2>
-            <p1>
-                Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis.
-                Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel, sce
-                lerisque eget, malesuada at, neque. Vivamus eget nibh.
-                Etiam cursus leo vel metus.
-            </p1>
-        </div>
-    </div>
-    <div class="car">
-        <div class="imag">
-            <img src="../carworld/volvo.jpg" >
-        </div>
-        <div class="texcar">
-            <h2> Volvo </h2>
-            <p1>
-                Nulla facilisi. Aenean nec eros. Vestibulum ante ipsum primis in
-                faucibus orci luctus. Neque porro quisquam est, qui dolorem ipsum
-                quia dolor sit amet,nsectetur, adipisci velit, sed quia non numquam eius modi.
-            </p1>
-        </div>
-    </div>
-    <div class="car-left">
-        <div class="imag">
-            <img src="../carworld/merc.jpg" >
-        </div>
-        <div class="textcar">
-            <h2>Mercsedec</h2>
-            <p1>
-                Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis.
-                Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel
-                , scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam
-                cursus leo vel metus.
-            </p1>
-        </div>
-    </div>
-    <div class="car">
-        <div class="imag">
-            <img src="../carworld/merc.jpg" >
-        </div>
-        <div class="textcar">
-            <h2>Mercsedec</h2>
-            <p1>
-                Aenean auctor wisi et urna. Aliquam erat volutpat. Duis ac turpis.
-                Integer rutrum ante eu lacus.Vestibulum libero nisl, porta vel
-                , scelerisque eget, malesuada at, neque. Vivamus eget nibh. Etiam
-                cursus leo vel metus.
-            </p1>
-        </div>
-    </div>
-</div>
+
 <%- include("footer.ejs") %>
 </body>
 </html>

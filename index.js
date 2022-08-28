@@ -75,13 +75,14 @@ app.get("/",function (req, res) {
     })
 
 });
-app.get("/creation",function (req, res) {
-    res.render("creation",{
+app.get("/aboutus",function (req, res) {
+    res.render("aboutus",{
         "brandList":brandList,
     });
 });
-app.get("/aboutus",function (req, res) {
-    res.render("aboutus",{
+
+app.get("/creation",function (req, res) {
+    res.render("creation",{
         "brandList":brandList,
     });
 });
@@ -95,8 +96,8 @@ app.get("/develop",function (req, res) {
         "brandList":brandList,
     });
 });
-app.get("/acces",function (req, res) {
-    res.render("acces",{
+app.get("/accessories",function (req, res) {
+    res.render("accessories",{
         "brandList":brandList,
     });
 });
@@ -107,13 +108,14 @@ app.get("/contact",function (req, res) {
 });
 
 
-app.get("/baohanh",function (req,res){
+app.get("/warranty",function (req,res){
     const BrName = req.query.BrName;
-    res.render("baohanh",{
+    res.render("warranty",{
         "brandList":brandList,
     });
 
 });
+
 app.get("/list-product",function (req, res) {
     var selectBrand = req.query.selectBrand;
     var selectYear = req.query.selectYear;
@@ -144,7 +146,7 @@ app.get("/list-product",function (req, res) {
                 "brnameList":brnameList,
                 "carlist":carlist,
                 "yearList": yearList,
-
+                "selectBrand":selectBrand
             })
         }
 
@@ -242,7 +244,7 @@ app.get("/car-detail",function(req,res) {
     const name = req.query.Name;
     const image = req.query.Image;
     const sql_cardetail = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Name like '%"+name+"%' or Image1 like '%"+image+"%'";
-    // res.send(sql_cardetail)
+    //res.send(sql_cardetail)
     conn.query(sql_cardetail, function (err, data) {
         if (err) res.send("404 Not Found");
         else {

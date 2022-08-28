@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Contact</title>
     <%- include("css.ejs") %>
 </head>
 <body>
@@ -24,37 +24,40 @@
                 <div class="title-border-inner"></div>
             </div>
         </div>
+        <div class="row g-0">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.1063503629284!2d105.78252556442261!3d21.028430249392727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135ab4cd0c66f05%3A0xea31563511af2e54!2zOCBUw7RuIFRo4bqldCBUaHV54bq_dCwgTeG7uSDEkMOsbmgsIEPhuqd1IEdp4bqleSwgSMOgIE7hu5lpLCBWaWV0bmFt!5e0!3m2!1sen!2sus!4v1661432773074!5m2!1sen!2sus" width="1200px" height="300px" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
         <div class="bg-white">
             <div class="row g-0">
                 <div class="col-lg-7 col-md-12 col-sm-12 col-pad2">
                     <!-- Contact form start -->
                     <div class="contact-form contact-pad">
                         <h3>Send us a Message</h3>
-                        <form id="contact_form" action="index.html" method="GET" enctype="multipart/form-data">
+                        <form id="contact_form" action="/" method="GET" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="col-md-6">
                                     <div class="form-group name">
-                                        <input type="text" name="name" class="form-control" placeholder="Name" aria-label="Full Name">
+                                        <input type="text" name="name" class="form-control" placeholder="Name" aria-label="Full Name" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group email">
-                                        <input type="email" name="email" class="form-control" placeholder="Email Address" aria-label="Email Address">
+                                        <input type="email" name="email" class="form-control" placeholder="Email Address" aria-label="Email Address" required>
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group subject">
-                                        <input type="text" name="subject" class="form-control" placeholder="Subject" aria-label="Subject">
+                                        <input type="text" name="subject" class="form-control" placeholder="Subject" aria-label="Subject" >
                                     </div>
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group number">
-                                        <input type="text" name="phone" class="form-control" placeholder="Phone" aria-label="Phone Number">
+                                        <input type="text" name="phone" class="form-control" placeholder="Phone" aria-label="Phone Number" required>
                                     </div>
                                 </div>
                                 <div class="col-md-12">
                                     <div class="form-group message">
-                                        <textarea  class="form-control" name="message" placeholder="Write message" aria-label="Write message"></textarea>
+                                        <textarea  class="form-control" name="message" placeholder="Write message" aria-label="Write message" required></textarea>
                                     </div>
                                 </div>
                                 <div class="col-md-12">

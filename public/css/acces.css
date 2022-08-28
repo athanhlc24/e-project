@@ -16,9 +16,7 @@
     padding-right: 30px;
     float: right;
 }
-i{
-    padding-right: 10px;
-}
+
 .mainn{
     padding-top: 30px;
     padding-left: 50px;
@@ -34,14 +32,14 @@ i{
 }
 .videoo{
     padding-left: 50px;
-    padding-top: 50px;
+    padding-top: 100px;
+    padding-left: 300px;
 }
 .mainn4{
     padding-top: 30px;
     padding-left: 50px;
 }
 .imgsecond{
-
     width: 50%;
     float: right;
 }
@@ -55,7 +53,6 @@ i{
     width: 100%;
     padding-bottom: 500px;
 }
-.font{
-    text-align: left;
-    padding-top: 50px;
+.listphutung{
+    padding-bottom: 50px;
 }
