@@ -157,37 +157,153 @@ app.get("/product",function (req,res) {
     var selectYear = req.query.selectYear;
     var selectBody = req.query.selectBody;
     var orderBy = req.query.orderBy;
+    var selectPrice = req.query.selectPrice;
     var sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID";
-    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined) {
+    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined && selectPrice == "Select Price" && selectPrice != undefined) {
         sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID";
     }
-    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined) {
+    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined && selectPrice == "Select Price" && selectPrice != undefined) {
         sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and BodyStyle like '%" + selectBody + "%'";
     }
-    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined) {
+    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined && selectPrice == "Select Price" && selectPrice != undefined) {
         sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Year like '%" + selectYear + "%' and BodyStyle like '%" + selectBody + "%'";
     }
-    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined) {
+    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined && selectPrice == "Select Price" && selectPrice != undefined) {
         sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Year like '%" + selectYear + "%' and BodyStyle like '%" + selectBody + "%'";
     }
-    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined) {
+    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined && selectPrice == "Select Price" && selectPrice != undefined) {
         sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where  BodyStyle like '%" + selectBody + "%'";
     }
-    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined) {
+    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined && selectPrice == "Select Price" && selectPrice != undefined) {
         sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Year like '%" + selectYear + "%'";
     }
-    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined) {
+    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined && selectPrice == "Select Price" && selectPrice != undefined) {
         sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%'";
     }
-    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined) {
+    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined && selectPrice == "Select Price" && selectPrice != undefined) {
         sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Year like '%" + selectYear + "%'";
     }
+    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined && selectPrice != undefined) {
+        if (selectPrice == 0) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Year like '%" + selectYear + "%' and Price*Percent/100 <= "+50000+"";
+        }
+        if (selectPrice == 1) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Year like '%" + selectYear + "%' and Price*Percent/100 > +"+50000+" and Price*Percent/100 <= "+150000+"";
+        }
+        if (selectPrice == 2) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Year like '%" + selectYear + "%' and Price*Percent/100 > "+150000+" and Price*Percent/100 <= "+300000+"";
+        }
+        if (selectPrice == 3) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Year like '%" + selectYear + "%' and Price*Percent/100> "+300000+" and Price*Percent/100 <= "+500000+"";
+        }
+    }
+    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined && selectPrice != undefined) {
+        if (selectPrice == 0) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and BodyStyle like '%" + selectBody + "%' and Price*Percent/100 <= "+50000+"";
+        }
+        if (selectPrice == 1) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and BodyStyle like '%" + selectBody + "%' and Price*Percent/100 > +"+50000+" and Price*Percent/100 <= "+150000+"";
+        }
+        if (selectPrice == 2) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and BodyStyle like '%" + selectBody + "%' and Price*Percent/100 > "+150000+" and Price*Percent/100 <= "+300000+"";
+        }
+        if (selectPrice == 3) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and BodyStyle like '%" + selectBody + "%' and Price*Percent/100> "+300000+" and Price*Percent/100 <= "+500000+"";
+        }
+    }
+    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined && selectPrice != undefined) {
+        if (selectPrice == 0) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Year like '%" + selectYear + "%' and BodyStyle like '%" + selectBody + "%' and Price*Percent/100 <= "+50000+"";
+        }
+        if (selectPrice == 1) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Year like '%" + selectYear + "%' and BodyStyle like '%" + selectBody + "%' and Price*Percent/100 > +"+50000+" and Price*Percent/100 <= "+150000+"";
+        }
+        if (selectPrice == 2) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Year like '%" + selectYear + "%' and BodyStyle like '%" + selectBody + "%' and Price*Percent/100 > "+150000+" and Price*Percent/100 <= "+300000+"";
+        }
+        if (selectPrice == 3) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Year like '%" + selectYear + "%' and BodyStyle like '%" + selectBody + "%' and Price*Percent/100> "+300000+" and Price*Percent/100 <= "+500000+"";
+        }
+    }
+    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined && selectPrice != undefined) {
+        if (selectPrice == 0) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Price*Percent/100 <= "+50000+"";
+        }
+        if (selectPrice == 1) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Price*Percent/100 > +"+50000+" and Price*Percent/100 <= "+150000+"";
+        }
+        if (selectPrice == 2) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Price*Percent/100 > "+150000+" and Price*Percent/100 <= "+300000+"";
+        }
+        if (selectPrice == 3) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Price*Percent/100> "+300000+" and Price*Percent/100 <= "+500000+"";
+        }
+    }
+    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined && selectPrice != undefined) {
+        if (selectPrice == 0) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Year like '%" + selectYear + "%' and Price*Percent/100 <= "+50000+"";
+        }
+        if (selectPrice == 1) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Year like '%" + selectYear + "%' and Price*Percent/100 > +"+50000+" and Price*Percent/100 <= "+150000+"";
+        }
+        if (selectPrice == 2) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Year like '%" + selectYear + "%' and Price*Percent/100 > "+150000+" and Price*Percent/100 <= "+300000+"";
+        }
+        if (selectPrice == 3) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Year like '%" + selectYear + "%' and Price*Percent/100> "+300000+" and Price*Percent/100 <= "+500000+"";
+        }
+    }
+    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined && selectPrice != undefined) {
+        if (selectPrice == 0) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where BodyStyle like '%" + selectBody + "%' and Price*Percent/100 <= "+50000+"";
+        }
+        if (selectPrice == 1) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where BodyStyle like '%" + selectBody + "%' and Price > +"+50000+" and Price*Percent/100 <= "+150000+"";
+        }
+        if (selectPrice == 2) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where BodyStyle like '%" + selectBody + "%' and Price > "+150000+" and Price*Percent/100 <= "+300000+"";
+        }
+        if (selectPrice == 3) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where BodyStyle like '%" + selectBody + "%' and Price> "+300000+" and Price*Percent/100 <= "+500000+"";
+        }
+    }
+    if (selectBrand != "Select Brand" && selectBrand != undefined && selectYear != "Select Year" && selectYear != undefined && selectBody != "Select Body" && selectBody != undefined && selectPrice != undefined) {
+        if (selectPrice == 0) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Year like '%" + selectYear + "%' and BodyStyle like '%" + selectBody + "%' and Price*Percent/100 <= "+50000+"";
+        }
+        if (selectPrice == 1) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Year like '%" + selectYear + "%' and BodyStyle like '%" + selectBody + "%' and Price*Percent/100 > +"+50000+" and Price*Percent/100 <= "+150000+"";
+        }
+        if (selectPrice == 2) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Year like '%" + selectYear + "%' and BodyStyle like '%" + selectBody + "%' and Price*Percent/100 > "+150000+" and Price*Percent/100 <= "+300000+"";
+        }
+        if (selectPrice == 3) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Brname like '%" + selectBrand + "%' and Year like '%" + selectYear + "%' and BodyStyle like '%" + selectBody + "%' and Price*Percent/100> "+300000+" and Price*Percent/100 <= "+500000+"";
+        }
+    }
+    if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined && selectPrice != undefined) {
+        if (selectPrice == 0) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Price*Percent/100 <= "+50000+"";
+        }
+        if (selectPrice == 1) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Price*Percent/100 >"+50000+" and Price*Percent/100 <= "+150000+"";
+        }
+        if (selectPrice == 2) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Price*Percent/100 > "+150000+" and Price*Percent/100 <= "+300000+"";
+        }
+        if (selectPrice == 3) {
+            sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Price*Percent/100 > "+300000+" and Price*Percent/100 <= "+500000+"";
+        }
+    }
 
+    if (orderBy == 0) {
+        sql_pro += " order by Price*Percent/100 asc"
+    }
     if (orderBy == 1) {
-        sql_pro += " order by Price desc"
+        sql_pro += " order by Price*Percent/100 desc"
     }
     if (orderBy == 2) {
-        sql_pro += " order by Price asc"
+        sql_pro += " order by Price*Percent/100 asc"
     }
     if (orderBy == 3) {
         sql_pro += " order by Year desc"

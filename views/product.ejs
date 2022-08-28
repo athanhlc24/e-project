@@ -54,6 +54,17 @@
                                 </select>
                             </div>
                             <div class="form-group">
+                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectPrice">
+                                    <option>Select Price</option>
+
+                                    <option value="0"><sup>$</sup>0 - 50.000</option>
+                                    <option value="1"><sup>$</sup>50.000 - 150.000</option>
+                                    <option value="2"><sup>$</sup>150.000 - 300.000</option>
+                                    <option value="3"><sup>$</sup>300.000 - 500.000</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <select class="search-fields" style="width: 360px;font-size: 14px" name="orderBy">
                                     <option value="0">Default Order</option>
                                     <option value="1">Price High to Low</option>
@@ -85,7 +96,7 @@
                                 <div class="tag" style="font-size: 20px"><sup>$</sup><%=carlist[i].Price%></div>
                                 <%}%>
                                 <%if(carlist[i].Discount ==1) {%>
-                                <div class="tag" style="font-size: 20px"><sup>$</sup><del><%=carlist[i].Price%></del> <sup>$</sup><%=(carlist[i].Price * carlist[i].Percent/100)%></div>
+                                <div class="tag" style="font-size: 20px"><sup>$</sup><del style="font-size: 12px"><%=carlist[i].Price%></del>  <sup>$</sup><%=(carlist[i].Price * carlist[i].Percent/100)%></div>
                                 <div class="tag2" style="font-size: 20px">-<%=100-(carlist[i].Percent)%>%</div>
 
 

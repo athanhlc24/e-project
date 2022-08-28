@@ -34,7 +34,7 @@
 
                                 <div class="tag-2 bg-active" style="background-color: red; color: black;text-align: center"> <b> BEST SELLING</b></div>
                             <%if(bestList[i].Discount == 1){%>
-                                <div class="price-box-2" style="color: white"><sup>$</sup><%=(bestList[i].Price * bestList[i].Percent/100)%> </div>
+                                <div class="price-box-2" style="color: white"><sup>$</sup><del style="font-size: 12px"><%=bestList[i].Price%></del> <sup>$</sup><%=(bestList[i].Price * bestList[i].Percent/100)%> </div>
                             <%}%>
                             <%if(bestList[i].Discount == 0){%>
                             <div class="price-box-2" style="color: white"><sup>$</sup><%=bestList[i].Price%> </div>
