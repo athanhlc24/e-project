@@ -96,7 +96,7 @@ app.get("/develop",function (req, res) {
         "brandList":brandList,
     });
 });
-app.get("/phutung",function (req, res) {
+app.get("/accessories",function (req, res) {
     res.render("accessories",{
         "brandList":brandList,
     });
@@ -108,7 +108,7 @@ app.get("/contact",function (req, res) {
 });
 
 
-app.get("/baohanh",function (req,res){
+app.get("/warranty",function (req,res){
     const BrName = req.query.BrName;
     res.render("warranty",{
         "brandList":brandList,
