@@ -1,6 +1,6 @@
 .service{
     float: left;
-    width: calc(25% - 40px);
+    width: calc(33.33% - 40px);
     margin: 10px;
     padding: 10px;
     border: none;
@@ -9,7 +9,7 @@
 .service a{
     color: gray;
 }
-.service a:hover{
+.baohanh-service >.service > a:hover{
     color: aqua;
     text-decoration: none;
 }
@@ -78,5 +78,5 @@ img {
     font-size: 15px;
 }
 .navtrai{
-    float: left;
+    float: right;
 }
