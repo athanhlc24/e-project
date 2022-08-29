@@ -99,7 +99,7 @@
                             <div class="photo-thumbnail">
                                 <div class="photo">
                                     <img class="d-block w-100" style="height: 250px" src="<%=listProduct[i].Image1%>" alt="car">
-                                    <a href="/car-detail?Image=<%=listProduct[i].Image1%>">
+                                    <a href="/car-detail?id=<%=listProduct[i].CID%>">
                                     </a>
                                 </div>
                                 <%if(listProduct[i].Discount ==1) {%>
@@ -113,13 +113,13 @@
                             <div class="detail" style="height: 150px">
                                 <div class="top">
                                     <h1>
-                                        <a href="/car-detail?Name=<%=listProduct[i].Name%>"><%=listProduct[i].BrName%> <%=listProduct[i].Name%></a>
+                                        <a href="/car-detail?id=<%=listProduct[i].CID%>"><%=listProduct[i].BrName%> <%=listProduct[i].Name%></a>
                                     </h1>
                                     <br>
                                     <div class="row" id="best-color">
-                                        <div class="col-md-4"><i class="fa-solid fa-calendar-days"></i> <%= carlist[i].Year%> </div>
-                                        <div class="col-md-4"><i class="fa-solid fa-car"></i>  <%=carlist[i].BodyStyle%></div>
-                                        <div class="col-md-4"><i class="fa-solid fa-gas-pump"></i>  <%=carlist[i].Fueltype%></div>
+                                        <div class="col-md-4"><i class="fa-solid fa-calendar-days"></i> <%= listProduct[i].Year%> </div>
+                                        <div class="col-md-4"><i class="fa-solid fa-car"></i>  <%=listProduct[i].BodyStyle%></div>
+                                        <div class="col-md-4"><i class="fa-solid fa-gas-pump"></i>  <%=listProduct[i].Fueltype%></div>
                                     </div>
                                 </div>
                             </div>

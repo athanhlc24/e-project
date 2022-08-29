@@ -58,7 +58,7 @@ conn.query(sql_car,function (err,data){
     }
 });
 app.get("/",function (req, res) {
-    const sql_txt ="select Image1,Name,Year,Price,HotCars,Fueltype,BrName,BodyStyle,Discount,Percent from cars inner join fueltypes on cars.FtID = fueltypes.FtID inner join brands on cars.BrId=brands.BrId inner join bodystyles on cars.BdID=bodystyles.BdID" ;
+    const sql_txt ="select CID,Image1,Name,Year,Price,HotCars,Fueltype,BrName,BodyStyle,Discount,Percent from cars inner join fueltypes on cars.FtID = fueltypes.FtID inner join brands on cars.BrId=brands.BrId inner join bodystyles on cars.BdID=bodystyles.BdID" ;
 
     conn.query(sql_txt,function (err,data){
         if(err) res.send("Not Found 404");
@@ -117,17 +117,12 @@ app.get("/warranty",function (req,res){
 });
 
 app.get("/list-product",function (req, res) {
-    var selectBrand = req.query.selectBrand;
-    var selectYear = req.query.selectYear;
-    var selectBody = req.query.selectBody;
-    var orderBy = req.query.orderBy;
     var BrName = req.query.BrName;
-    const search = req.query.search
     var sql_list ="select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where BrName like '"+BrName+"';"+
         "select BrName from brands where BrName like '"+BrName+"';"+
         "select BodyStyle from bodystyles inner join cars on bodystyles.BdID = cars.BdID where BrID in(select BrID from brands where BrName like '"+BrName+"');"+
-        "select Fueltype from fueltypes inner join  cars on fueltypes.FtID = cars.FtID where BrID in(select BrID from brands where BrName like '"+BrName+"');"+
-        "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID";
+        "select Fueltype from fueltypes inner join  cars on fueltypes.FtID = cars.FtID where BrID in(select BrID from brands where BrName like '"+BrName+"')";
+
 
     conn.query(sql_list,function (err,data) {
         if (err) res.send("404 NOT FOUND");
@@ -137,16 +132,15 @@ app.get("/list-product",function (req, res) {
             var bodyList = data[2];
             var fuelList = data[3];
             var brnameList =data[1][0];
-            var carlist = data[4];
+
             res.render("list-product",{
                 "brandList":brandList,
                 "listProduct": listProduct,
                 "bodyList":bodyList,
                 "fuelList":fuelList,
                 "brnameList":brnameList,
-                "carlist":carlist,
                 "yearList": yearList,
-                "selectBrand":selectBrand
+
             })
         }
 
@@ -319,25 +313,17 @@ app.get("/product",function (req,res) {
                 "brandList": brandList,
                 "carlist": carlist,
                 "yearList": yearList,
-                "bodyList": bodyList
+                "bodyList": bodyList,
+                "selectBrand":selectBrand,
+                "selectYear":selectYear,
+                "selectBody":selectBody,
+                "selectPrice":selectPrice,
+                "orderBy":orderBy
             })
         }
     });
 });
-app.get("/car-price-list",function (req, res) {
-    const sql_list ="select Name,Price from cars";
-    conn.query(sql_list,function (err,data) {
-        if (err) res.send("404 NOT FOUND");
-        else{
-            var carPriceList = data;
-            res.render("car-price-list",{
-                "carPriceList": carPriceList,
-                "brandList":brandList,
-            })
-        }
 
-    })
-});
 app.get("/search",function(req,res) {
     const search = req.query.search;
     const sql_search = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Name like '%"+search+"%' or BodyStyle like '%"+search+"%' or Fueltype like '%"+search+"%' or BrName like '%"+search+"%' or Year like '"+search+"' ";
@@ -357,10 +343,9 @@ app.get("/search",function(req,res) {
     })
 });
 app.get("/car-detail",function(req,res) {
-    const name = req.query.Name;
-    const image = req.query.Image;
-    const sql_cardetail = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where Name like '%"+name+"%' or Image1 like '%"+image+"%'";
-    //res.send(sql_cardetail)
+    const cid = req.query.id;
+    const sql_cardetail = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where CID like '%"+cid+"%'";
+    // res.send(sql_cardetail)
     conn.query(sql_cardetail, function (err, data) {
         if (err) res.send("404 Not Found");
         else {

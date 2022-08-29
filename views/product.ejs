@@ -33,7 +33,7 @@
                                 <select class="search-fields" style="width: 360px;font-size: 14px" name="selectBrand">
                                     <option>Select Brand</option>
                                     <%for(var i=0;i<brandList.length;i++){%>
-                                    <option><%=brandList[i].BrName%></option>
+                                    <option <%if(selectBrand == brandList[i].BrName){%>selected<%}%>><%=brandList[i].BrName%></option>
                                     <%}%>
                                 </select>
                             </div>
@@ -41,7 +41,7 @@
                                 <select class="search-fields" style="width: 360px;font-size: 14px" name="selectYear">
                                     <option>Select Year</option>
                                     <%for(var i=0;i<yearList.length;i++){%>
-                                    <option><%=yearList[i].Year%></option>
+                                    <option <%if(selectYear == yearList[i].Year){%>selected<%}%>><%=yearList[i].Year%></option>
                                     <%}%>
                                 </select>
                             </div>
@@ -49,7 +49,7 @@
                                 <select class="search-fields" style="width: 360px;font-size: 14px" name="selectBody">
                                     <option>Select Body</option>
                                     <%for(var i=0;i<bodyList.length;i++){%>
-                                    <option><%=bodyList[i].BodyStyle%></option>
+                                    <option <%if(selectBody == bodyList[i].BodyStyle){%>selected<%}%>><%=bodyList[i].BodyStyle%></option>
                                     <%}%>
                                 </select>
                             </div>
@@ -57,20 +57,20 @@
                                 <select class="search-fields" style="width: 360px;font-size: 14px" name="selectPrice">
                                     <option>Select Price</option>
 
-                                    <option value="0"><sup>$</sup>0 - 50.000</option>
-                                    <option value="1"><sup>$</sup>50.000 - 150.000</option>
-                                    <option value="2"><sup>$</sup>150.000 - 300.000</option>
-                                    <option value="3"><sup>$</sup>300.000 - 500.000</option>
+                                    <option value="0" <%if(selectPrice==0){%>selected<%}%>><sup>$</sup>0 - 50.000</option>
+                                    <option value="1" <%if(selectPrice==1){%>selected<%}%>><sup>$</sup>50.000 - 150.000</option>
+                                    <option value="2" <%if(selectPrice==2){%>selected<%}%>><sup>$</sup>150.000 - 300.000</option>
+                                    <option value="3" <%if(selectPrice==3){%>selected<%}%>><sup>$</sup>300.000 - 500.000</option>
 
                                 </select>
                             </div>
                             <div class="form-group">
                                 <select class="search-fields" style="width: 360px;font-size: 14px" name="orderBy">
-                                    <option value="0">Default Order</option>
-                                    <option value="1">Price High to Low</option>
-                                    <option value="2">Price: Low to High</option>
-                                    <option value="3">Newest Properties</option>
-                                    <option value="4">Oldest Properties</option>
+                                    <option value="0" <%if(orderBy==0){%>selected<%}%>>Default Order</option>
+                                    <option value="1" <%if(orderBy==1){%>selected<%}%>>Price High to Low</option>
+                                    <option value="2" <%if(orderBy==2){%>selected<%}%>>Price: Low to High</option>
+                                    <option value="3" <%if(orderBy==3){%>selected<%}%>>Newest Properties</option>
+                                    <option value="4" <%if(orderBy==4){%>selected<%}%>>Oldest Properties</option>
                                 </select>
                             </div>
                             <div class="form-group mb-0">
@@ -83,13 +83,18 @@
 
             <div class="col-lg-8 col-md-12">
                 <div class="row">
+                    <%if(carlist.length==0){%>
+                    <div class="col-md-6">
+                    <h1>Not Found 404</h1>
+                    </div>
+                    <%}%>
                     <%for(var i=0;i<carlist.length;i++){%>
                     <div class="col-lg-6 col-md-6">
                         <div class="car-box">
                             <div class="photo-thumbnail">
                                 <div class="photo">
                                     <img class="d-block w-100" style="height: 250px" src="<%=carlist[i].Image1%>" alt="car">
-                                    <a href="/car-detail?Image=<%=carlist[i].Image1%>">
+                                    <a href="/car-detail?id=<%=carlist[i].CID%>">
                                     </a>
                                 </div>
                                 <%if(carlist[i].Discount ==0) {%>
@@ -106,7 +111,7 @@
                             <div class="detail" style="height: 150px">
                                 <div class="top">
                                     <h1>
-                                          <a href="/car-detail?Name=<%=carlist[i].Name%>"><%=carlist[i].BrName%> <%=carlist[i].Name%></a>
+                                          <a href="/car-detail?id=<%=carlist[i].CID%>"><%=carlist[i].BrName%> <%=carlist[i].Name%></a>
                                     </h1>
                                     <br>
                                     <div class="row" id="best-color">

@@ -66,6 +66,10 @@
 
             <div class="col-lg-8 col-md-12">
                 <div class="row">
+                    <%if(searchList.length==0){%>
+                    <h1>Not Found 404</h3>
+                    <%}%>
+
                     <%for(var i=0;i<searchList.length;i++){%>
 
                     <div class="col-lg-6 col-md-6">
