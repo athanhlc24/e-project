@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/midnight-blue.css"/>
+    <link rel="stylesheet" href="/css/search-home.css"/>
     <title>Cars List</title>
 
     <%- include("css.ejs")%>
@@ -28,9 +28,9 @@
 
                     <div class="widget widget-3 advanced-search2">
                         <h3 class="sidebar-title">Search Cars</h3>
-                        <form method="GET">
+                        <form action="#" method="GET">
                             <div class="form-group">
-                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectBrand">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="selectBrand">
                                     <option>Select Brand</option>
                                     <%for(var i=0;i<brandList.length;i++){%>
                                     <option <%if(selectBrand == brandList[i].BrName){%>selected<%}%>><%=brandList[i].BrName%></option>
@@ -38,7 +38,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectYear">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="selectYear">
                                     <option>Select Year</option>
                                     <%for(var i=0;i<yearList.length;i++){%>
                                     <option <%if(selectYear == yearList[i].Year){%>selected<%}%>><%=yearList[i].Year%></option>
@@ -46,7 +46,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectBody">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="selectBody">
                                     <option>Select Body</option>
                                     <%for(var i=0;i<bodyList.length;i++){%>
                                     <option <%if(selectBody == bodyList[i].BodyStyle){%>selected<%}%>><%=bodyList[i].BodyStyle%></option>
@@ -54,7 +54,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectPrice">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="selectPrice">
                                     <option>Select Price</option>
 
                                     <option value="0" <%if(selectPrice==0){%>selected<%}%>><sup>$</sup>0 - 50.000</option>
@@ -65,7 +65,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="search-fields" style="width: 360px;font-size: 14px" name="orderBy">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="orderBy">
                                     <option value="0" <%if(orderBy==0){%>selected<%}%>>Default Order</option>
                                     <option value="1" <%if(orderBy==1){%>selected<%}%>>Price High to Low</option>
                                     <option value="2" <%if(orderBy==2){%>selected<%}%>>Price: Low to High</option>
@@ -84,8 +84,8 @@
             <div class="col-lg-8 col-md-12">
                 <div class="row">
                     <%if(carlist.length==0){%>
-                    <div class="col-md-6">
-                    <h1>Not Found 404</h1>
+                    <div class="col-md-6 search-found">
+                        <p><b>Not Found 404</b></p>
                     </div>
                     <%}%>
                     <%for(var i=0;i<carlist.length;i++){%>

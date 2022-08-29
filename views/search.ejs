@@ -8,6 +8,7 @@
     <title>Search</title>
     <%- include("css.ejs")%>
     <link rel="stylesheet" href="/css/list-product.css"/>
+    <link rel="stylesheet" href="/css/search-home.css"/>
 
 </head>
 
@@ -22,9 +23,9 @@
 
                     <div class="widget widget-3 advanced-search2">
                         <h3 class="sidebar-title">Search Cars</h3>
-                        <form method="GET">
+                        <form action="/product" method="GET">
                             <div class="form-group">
-                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectBrand">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="selectBrand">
                                     <option>Select Brand</option>
                                     <%for(var i=0;i<brandList.length;i++){%>
                                     <option><%=brandList[i].BrName%></option>
@@ -32,7 +33,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectYear">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="selectYear">
                                     <option>Select Year</option>
                                     <%for(var i=0;i<yearList.length;i++){%>
                                     <option><%=yearList[i].Year%></option>
@@ -40,7 +41,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectBody">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="selectBody">
                                     <option>Select Body</option>
                                     <%for(var i=0;i<bodyList.length;i++){%>
                                     <option><%=bodyList[i].BodyStyle%></option>
@@ -48,7 +49,18 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="search-fields" style="width: 360px;font-size: 14px" name="orderBy">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="selectPrice">
+                                    <option>Select Price</option>
+
+                                    <option value="0"><sup>$</sup>0 - 50.000</option>
+                                    <option value="1"><sup>$</sup>50.000 - 150.000</option>
+                                    <option value="2"><sup>$</sup>150.000 - 300.000</option>
+                                    <option value="3"><sup>$</sup>300.000 - 500.000</option>
+
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="orderBy">
                                     <option value="0">Default Order</option>
                                     <option value="1">Price High to Low</option>
                                     <option value="2">Price: Low to High</option>
@@ -67,7 +79,9 @@
             <div class="col-lg-8 col-md-12">
                 <div class="row">
                     <%if(searchList.length==0){%>
-                    <h1>Not Found 404</h3>
+                        <div class="col-md-6 search-found">
+                    <p>Not Found 404</p>
+                        </div>
                     <%}%>
 
                     <%for(var i=0;i<searchList.length;i++){%>

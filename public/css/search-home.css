@@ -80,3 +80,10 @@
 #top-up:hover {
     color: burlywood;
 }
+.search-found>p{
+    width: 1200px;
+    height: 1800px;
+    text-align: center;
+    color: red;
+    font-size: 100px;
+}
