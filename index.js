@@ -118,7 +118,7 @@ app.get("/warranty",function (req,res){
 
 app.get("/list-product",function (req, res) {
     var BrName = req.query.BrName;
-    var sql_list ="select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where BrName like '"+BrName+"';"+
+    var sql_list ="select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID where BrName like '"+BrName+"' order by Price*Percent/100 asc;"+
         "select BrName from brands where BrName like '"+BrName+"';"+
         "select BodyStyle from bodystyles inner join cars on bodystyles.BdID = cars.BdID where BrID in(select BrID from brands where BrName like '"+BrName+"');"+
         "select Fueltype from fueltypes inner join  cars on fueltypes.FtID = cars.FtID where BrID in(select BrID from brands where BrName like '"+BrName+"')";
@@ -152,7 +152,7 @@ app.get("/product",function (req,res) {
     var selectBody = req.query.selectBody;
     var orderBy = req.query.orderBy;
     var selectPrice = req.query.selectPrice;
-    var sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID";
+    var sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID order by Price*Percent/100 asc";
     if (selectBrand == "Select Brand" && selectBrand != undefined && selectYear == "Select Year" && selectYear != undefined && selectBody == "Select Body" && selectBody != undefined && selectPrice == "Select Price" && selectPrice != undefined) {
         sql_pro = "select * from cars inner join brands on cars.BrID=brands.BrID inner join bodystyles on cars.BdID=bodystyles.BdID inner join fueltypes  on cars.FtID=fueltypes.FtID";
     }

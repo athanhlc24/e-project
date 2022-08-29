@@ -39,7 +39,7 @@
                         <h3 class="sidebar-title">Search Cars</h3>
                         <form action="/product" method="GET">
                             <div class="form-group">
-                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectBrand">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="selectBrand">
                                     <option>Select Brand</option>
                                     <%for(var i=0;i<brandList.length;i++){%>
                                     <option ><%=brandList[i].BrName%></option>
@@ -47,7 +47,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectYear">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="selectYear">
                                     <option>Select Year</option>
                                     <%for(var i=0;i<yearList.length;i++){%>
                                     <option><%=yearList[i].Year%></option>
@@ -55,7 +55,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectBody">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="selectBody">
                                     <option>Select Body</option>
                                     <%for(var i=0;i<bodyList.length;i++){%>
                                     <option><%=bodyList[i].BodyStyle%></option>
@@ -63,7 +63,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="search-fields" style="width: 360px;font-size: 14px" name="selectPrice">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="selectPrice">
                                     <option>Select Price</option>
 
                                     <option value="0"><sup>$</sup>0 - 50.000</option>
@@ -74,7 +74,7 @@
                                 </select>
                             </div>
                             <div class="form-group">
-                                <select class="search-fields" style="width: 360px;font-size: 14px" name="orderBy">
+                                <select class="search-fields" style="width: 360px;font-size: 18px" name="orderBy">
                                     <option value="0">Default Order</option>
                                     <option value="1">Price High to Low</option>
                                     <option value="2">Price: Low to High</option>
